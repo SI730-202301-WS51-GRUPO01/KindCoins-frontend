@@ -1,8 +1,8 @@
 <template>
     <div class="class-full">
-        <pv-menubar class="sticky bg-primary">
+        <pv-menubar class="sticky">
             <template #start>
-                <pv-button> 
+                <pv-button text rounded> 
                     <img src="https://i.postimg.cc/6QvxVCSG/logo.png" alt="logo" class="h-3rem">
                 </pv-button>               
             </template>

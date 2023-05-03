@@ -11,11 +11,11 @@
 <script>
 import AppHeader from "@/components/layout/AppHeader.component.vue"
 import AppFooter from "@/components/layout/AppFooter.component.vue"
-import CampaignCreated from "./components/campaign-section/launch-campaign/CampaignCreated.component.vue";
-
+import CampaignCreated from "@/components/campaign-section/launch-campaign/CampaignCreated.component.vue";
+import SelectMethod from "@/components/payment-methods/SelectMethod.component.vue";
 export default {
   name: 'App',
-  components: { AppFooter, AppHeader, CampaignCreated },
+  components: { AppFooter, AppHeader, CampaignCreated, SelectMethod },
 }
 </script>
 

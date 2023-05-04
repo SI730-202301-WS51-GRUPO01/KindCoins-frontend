@@ -1,16 +1,15 @@
 <template>
     <div class="py-12 mx-auto">
         <!-- Autocomplete location search input -->
-        <div class="form-group">
-            <input class="w-full" id="place-input" type="text" placeholder="Type address..."/>
+        <div class="form-group flex  pb-2">
+            <pv-input-text class="w-full" id="place-input" type="text" placeholder="Ingresa tu dirección"/>
         </div>
-        <div class="m-6" ref="mapDiv" style="width: 95%; height: 400px"/>
+        <div ref="mapDiv" style="width: 100%; height: 400px"/>
 <!--         <p><b>Latitude:</b>{{ resul_lat }}</p>
         <p><b>Longitude:</b>{{ resul_lng }}</p> -->
         <a v-if="resul_lng!=null" class="text-blue-600 no-underline hover:underline"
            :href="`https://www.google.com/maps/search/${resul_lat},${resul_lng}`">
             Ver en Google Maps</a>
-
     </div>
 </template>
 
@@ -25,7 +24,7 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCo73cODrVrhwYpmhegeL8ptJUmO_I-M04'
 
 
 export default {
-    name: 'GPS4',
+    name: 'google-maps',
     //setup se inicia mucho antes
     created() {
         //saber la accion del navegador, reload, navigate, back_forward

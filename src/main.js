@@ -25,6 +25,8 @@ import Badge from 'primevue/badge';
 import PanelMenu from 'primevue/panelmenu';
 import Breadcrumb from 'primevue/breadcrumb';
 import Divider from 'primevue/divider';
+import Accordion from 'primevue/accordion';
+import AccordionTab from 'primevue/accordiontab';
 import './assets/main.css'
 
 const app = createApp(App)
@@ -43,6 +45,8 @@ const app = createApp(App)
 .component('pv-panel-menu', PanelMenu)
 .component('pv-breadcrumb', Breadcrumb)
 .component('pv-divider', Divider)
+.component('pv-accordion', Accordion)
+.component('pv-accordiontab', AccordionTab)
 
 //app.use(router)
 

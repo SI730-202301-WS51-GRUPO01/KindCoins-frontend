@@ -1,6 +1,6 @@
 <template>
     <div class="class-full">
-        <pv-menubar class="sticky bg-primary">
+        <pv-menubar class="menu-bar">
             <template #start>
                 <pv-button> 
                     <img src="https://i.postimg.cc/6QvxVCSG/logo.png" alt="logo" class="h-3rem">
@@ -31,5 +31,7 @@
 
 
 <style scoped>
-
+.menu-bar{
+    background-color: #EBFFFD;
+}
 </style>

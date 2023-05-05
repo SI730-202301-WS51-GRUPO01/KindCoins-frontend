@@ -1,16 +1,7 @@
 <template>
   <div class="app-container">
     <div class="content-container">
-      <AppHeader></AppHeader>
-      <nav>
-        <AppSideMenu></AppSideMenu>
-      </nav>
-      <main>
-        <CampaignCreated></CampaignCreated>
-      </main>
-      <aside>
-
-      </aside>
+      <SignUpWith></SignUpWith>
   </div>
   <AppFooter></AppFooter>
 </div>
@@ -22,10 +13,16 @@ import AppFooter from "@/components/layout/AppFooter.component.vue"
 import CampaignCreated from "./components/campaign-section/launch-campaign/CampaignCreated.component.vue";
 import AppSideMenu from "./components/layout/AppSideMenu.component.vue";
 import CampaignData from "./components/campaign-section/launch-campaign/CampaignData.component.vue";
+import Login from "./components/user-start/login.vue";
+import SignUp from "./components/user-start/signup.vue";
+import ThankU from "./components/user-start/thanku.vue";
+import Congratulations from "./components/user-start/congratulations.vue";
+import SignUpWith from "./components/user-start/signupwith.vue";
 
 export default {
   name: 'App',
-  components: { AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData },
+  components: { AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData, Login, SignUp,
+     ThankU, Congratulations, SignUpWith}, 
 }
 </script>
 

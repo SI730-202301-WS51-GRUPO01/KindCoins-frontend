@@ -12,6 +12,7 @@ import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 // Add Components
 import Card from "primevue/card";
+import Checkbox from 'primevue/checkbox';
 import Button from "primevue/button";
 import Sidebar from "primevue/sidebar";
 import Avatar from "primevue/avatar";
@@ -47,6 +48,7 @@ const app = createApp(App)
 .component('pv-divider', Divider)
 .component('pv-accordion', Accordion)
 .component('pv-accordiontab', AccordionTab)
+.component('pv-checkbox', Checkbox)
 
 //app.use(router)
 

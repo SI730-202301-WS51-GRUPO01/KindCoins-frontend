@@ -25,6 +25,9 @@ import Badge from 'primevue/badge';
 import PanelMenu from 'primevue/panelmenu';
 import Breadcrumb from 'primevue/breadcrumb';
 
+//Sidebar
+
+
 import './assets/main.css'
 
 const app = createApp(App)
@@ -42,6 +45,8 @@ const app = createApp(App)
 .component('pv-badge', Badge)
 .component('pv-panel-menu', PanelMenu)
 .component('pv-breadcrumb', Breadcrumb)
+
+
 
 //app.use(router)
 

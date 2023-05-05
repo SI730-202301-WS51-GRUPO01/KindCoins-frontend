@@ -1,6 +1,6 @@
 <template>
     <div class="card flex flex-column align-items-center ">
-        <pv-panel-menu v-model:expandedKeys="expandedKeys" :model="items" class="w-full md:w-25rem "  />
+        <pv-panel-menu v-model:expandedKeys="expandedKeys" :model="items" class=" md:w-25rem " />
     </div>
 </template>
 

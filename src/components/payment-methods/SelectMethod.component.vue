@@ -9,6 +9,10 @@
                     @click="selectDonationType('monthly')">Mensualmente</button>
             </div>
             <div class="donation-amount">
+                <div class="donation-selected-amount">
+                    <div class="donation-amount-label">Monto seleccionado:</div>
+                    <div class="donation-amount-value">S/ {{ donationAmount }}</div>
+                </div>
                 <!-- Rest of the donation amount code -->
                 <div class="donation-buttons">
                     <button class="donation-option" :class="{ 'selected': donationAmount === 5 }"
@@ -23,142 +27,23 @@
                         <input type="number" v-model="customDonationAmount" min="20" placeholder="Otro monto">
                     </div>
                 </div>
-                <div class="donation-selected-amount">
-                    <div class="donation-amount-label">Monto seleccionado:</div>
-                    <div class="donation-amount-value">S/ {{ donationAmount }}</div>
-                </div>
-                <div class="donation-payment-method">
-                    <div class="donation-payment-label">Seleccione un método de pago:</div>
-                    <div class="donation-payment-options">
-                        <div class="payment-option">
-                            <input type="radio" id="visa" name="payment-method" value="visa"
-                                v-model="selectedPaymentMethod">
-                            <label for="visa">Visa</label>
-                        </div>
-                        <div class="payment-option">
-                            <input type="radio" id="yape" name="payment-method" value="yape"
-                                v-model="selectedPaymentMethod">
-                            <label for="yape">Yape</label>
-                        </div>
-                        <div class="payment-option">
-                            <input type="radio" id="plin" name="payment-method" value="plin"
-                                v-model="selectedPaymentMethod">
-                            <label for="plin">Plin</label>
-                        </div>
-                    </div>
-                    <button class="donation-continue-button" @click="continueToPayment">Continuar</button>
-                </div>
-            </div>
-        </div>
-        <!-- Payment method dialog -->
-        <div class="payment-dialog" v-show="showPaymentDialog">
-            <div class="payment-dialog-overlay" @click="closePaymentDialog"></div>
-            <div class="payment-dialog-content">
-                <h2 class="payment-dialog-title">Seleccione un método de pago:</h2>
-                <!-- Rest of the payment method options code -->
-                <!-- Rest of the payment method options code -->
-                <div v-if="selectedPaymentMethod === 'visa'">
-                    <VisaPayment />
-                </div>
-                <div v-else-if="selectedPaymentMethod === 'yape'">
-                    <YapePayment />
-                </div>
-                <div v-else-if="selectedPaymentMethod === 'plin'">
-                    <PlinPayment />
-                </div>
-                <button class="donation-continue-button" @click="closePaymentDialog">Cerrar</button>
+                <button class="donation-continue-button" @click="openPaymentDialog">Continuar</button>
+
+                <!-- Payment method dialog -->
+                <PaymentMethod v-model="showPaymentDialog" />
             </div>
         </div>
     </div>
 </template>
 
 
-<!-- <template>
-     <div class="donation-container">
-
-    <div class="donation-container">
-        <div class="donation-content">
-            <div class="donation-selection">
-                <button class="donation-option" :class="{ 'selected': donationType === 'one-time' }"
-                    @click="selectDonationType('one-time')">Una vez</button>
-                <button class="donation-option" :class="{ 'selected': donationType === 'monthly' }"
-                    @click="selectDonationType('monthly')">Mensualmente</button>
-            </div>
-            <div class="donation-amount" v-if="selectedOption === 'dinero'">
-                <div class="donation-buttons">
-                    <button class="donation-option" :class="{ 'selected': donationAmount === 5 }"
-                        @click="selectDonationAmount(5)">S/ 5</button>
-                    <button class="donation-option" :class="{ 'selected': donationAmount === 10 }"
-                        @click="selectDonationAmount(10)">S/ 10</button>
-                    <button class="donation-option" :class="{ 'selected': donationAmount === 15 }"
-                        @click="selectDonationAmount(15)">S/ 15</button>
-                    <button class="donation-option" :class="{ 'selected': donationAmount === 20 }"
-                        @click="selectDonationAmount(20)">S/ 20</button>
-                    <div class="donation-custom-amount">
-                        <input type="number" v-model="customDonationAmount" min="20" placeholder="Otro monto">
-                    </div>
-                </div>
-                <div class="donation-selected-amount">
-                    <div class="donation-amount-label">Monto seleccionado:</div>
-                    <div class="donation-amount-value">S/ {{ donationAmount }}</div>
-                </div>
-                <div class="donation-payment-method">
-                    <div class="donation-payment-label">Seleccione un método de pago:</div>
-                    <div class="donation-payment-options">
-                        <div class="payment-option">
-                            <input type="radio" id="visa" name="payment-method" value="visa"
-                                v-model="selectedPaymentMethod">
-                            <label for="visa">Visa</label>
-                        </div>
-                        <div class="payment-option">
-                            <input type="radio" id="yape" name="payment-method" value="yape"
-                                v-model="selectedPaymentMethod">
-                            <label for="yape">Yape</label>
-                        </div>
-                        <div class="payment-option">
-                            <input type="radio" id="plin" name="payment-method" value="plin"
-                                v-model="selectedPaymentMethod">
-                            <label for="plin">Plin</label>
-                        </div>
-                    </div>
-                    <button class="donation-continue-button" @click="continueToPayment">Continuar</button>
-                </div>
-            </div>
-            <div class="donation-payment" v-else-if="selectedOption === 'pago'">
-                <!-- Payment method dialog 
-                <div class="payment-dialog" v-if="showPaymentDialog">
-                    <div class="payment-dialog-overlay" @click="closePaymentDialog"></div>
-                    <div class="payment-dialog-content">
-                        <h2 class="payment-dialog-title">Seleccione un método de pago:</h2>
-                        <!-- Rest of the payment method options code 
-                        <div v-if="selectedPaymentMethod === 'visa'">
-                            <VisaPayment />
-                        </div>
-                        <div v-else-if="selectedPaymentMethod === 'yape'">
-                            <YapePayment />
-                        </div>
-                        <div v-else-if="selectedPaymentMethod === 'plin'">
-                            <PlinPayment />
-                        </div>
-                        <button class="donation-continue-button" @click="closePaymentDialog">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- </div> 
-</template> -->
   
 <script>
-import VisaPayment from './VisaMethod.component.vue';
-import YapePayment from './YapeMethod.component.vue';
-import PlinPayment from './PlinMethod.component.vue';
+import PaymentMethod from './PaymentMethod.component.vue';
 
 export default {
     components: {
-        VisaPayment,
-        YapePayment,
-        PlinPayment,
+        PaymentMethod,
     },
     data() {
         return {
@@ -177,13 +62,7 @@ export default {
         selectDonationAmount(amount) {
             this.donationAmount = amount;
         },
-        continueToPayment() {
-            if (this.selectedPaymentMethod) {
-                // Show dialog for confirmation
-                // Navigate to payment page based on selected payment method
-            }
-        },
-        continueToPayment() {
+        openPaymentDialog() {
             this.showPaymentDialog = true;
         },
         closePaymentDialog() {
@@ -199,6 +78,7 @@ export default {
     },
 };
 </script>
+
 
 <style>
 .donation-container {
@@ -338,6 +218,19 @@ export default {
 
 .donation-payment-button {
     margin-top: 20px;
+}
+
+.donation-continue-button {
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: #0597a6;
 }
 
 .payment-dialog-overlay {

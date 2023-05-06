@@ -45,7 +45,7 @@
               </div>
               <p class="price align-self-center font-bold text-xl">Gratis</p>
             </div>
-          <router-link to="/select-method">
+          <router-link to="/preview">
             <pv-button>Siguiente</pv-button>
           </router-link>
         </div>

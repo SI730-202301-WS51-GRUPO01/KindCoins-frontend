@@ -1,22 +1,30 @@
 <template>
     <div class="login-container">
-        <div class="grid-2">
+        <div class="logo-container">
             <img class="logo" src="./../../../public/1.png" alt="kind coins logo"/>
+        </div>
             <p class="inicia-sesion">Inicia sesión</p>
-            <div class="flex flex-column gap-2">
-                <label for="email">Correo electrónico</label>
-                <pv-input-text v-model="value" type="text" class="p-inputtext-sm"/>
-                <label for="password">Contraseña</label>
-                <pv-input-text v-model="value" type="text" class="p-inputtext-sm"/>
+            <div class="flex flex-column gap-2" style="grid-column: 2/3">
+                <span class="p-float-label" style="margin-top: 15px">
+                    <pv-input-text id="email" v-model="value" style="width: 321.93px" />
+                    <label for="email" style="font-family: 'Roboto'; color: #515151">Ingrese su correo electrónico</label>
+                </span>
+                <span class="p-float-label" style="margin-top: 15px">
+                    <pv-input-text id="password" v-model="value" style="width: 321.93px" />
+                    <label for="password" style="font-family: 'Roboto'; color: #515151">Ingrese su contraseña</label>
+                </span>
             </div>
-            <p>¿Olvidaste tu contraseña?</p>
-            <pv-button label="Iniciar sesion"/>
-            <p>¿Todavía no tienes cuenta?</p>
-            <p>
-                <router-link to="/sign-up-with">Crea una cuenta</router-link>
+            <p style="grid-column: 2/3; color: #0597A6; text-decoration-line: underline; font-size: 12px; font-family: 'Roboto'">
+                ¿Olvidaste tu contraseña?
+            </p>
+            <router-link to="/campaign-data" style="grid-column: 2/3">
+                <pv-button label="Iniciar sesion" style="color:white; background-color:#FFDE59; margin-top:20px"/>
+            </router-link>
+            <p style="grid-column: 2/3; margin-top:20px; font-family: 'Roboto'; color: #515151">¿Todavía no tienes cuenta?</p>
+            <p style="grid-column: 2/3;">
+                <router-link to="/sign-up-with" style="color: #0597A6">Crea una cuenta</router-link>
             </p>
         </div>
-    </div>
 </template>
 
 <script>
@@ -27,12 +35,13 @@ export default{
 
 <style>
 .logo{
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 100px;
     bottom: 28px;
+    margin-top: 50px;
 }
-.grid-2{
+.logo-container{
     grid-column: 2/3;
 }
 .login-container{
@@ -47,5 +56,6 @@ export default{
     font-weight: 700;
     font-size: 18px;
     color: #515151;
+    grid-column: 2/3;
 }
 </style>

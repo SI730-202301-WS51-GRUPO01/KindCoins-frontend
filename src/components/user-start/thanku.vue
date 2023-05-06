@@ -6,8 +6,8 @@
         <i class="pi pi-check-circle"></i>
         <p style="grid-column: 2/3">¡Gracias por registrarte en KindCoins!</p>
         <p style="grid-column: 2/3; text-align: center">Revisa tu correo electrónico para poder habilitar tu cuenta</p>
-        <router-link to="/congratulations">
-        <pv-button style="grid-column: 2/3" label="Aceptar"/>
+        <router-link to="/congratulations" style="grid-column: 2/3">
+        <pv-button label="Aceptar"/>
         </router-link>
     </div>
 </template>

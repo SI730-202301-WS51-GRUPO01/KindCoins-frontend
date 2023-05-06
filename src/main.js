@@ -28,6 +28,7 @@ import Breadcrumb from 'primevue/breadcrumb';
 import Divider from 'primevue/divider';
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
+import ProgressBar from 'primevue/progressbar';
 //DonationCampaign
 import InputNumber from 'primevue/inputnumber';
 import 'primeicons/primeicons.css';
@@ -56,6 +57,7 @@ const app = createApp(App)
 .component('pv-checkbox', Checkbox)
 .component('pv-inputNumber', InputNumber)
 .component('pv-dropdown', Dropdown)
+.component('pv-progressbar', ProgressBar)
 
 app.use(router)
 

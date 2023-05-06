@@ -1,7 +1,5 @@
 <template>
-  <AppHeader></AppHeader>
-  <DonationDetails></DonationDetails>
-  <AppFooter></AppFooter>
+  <Preview></Preview>
 </template>
 
 <script>
@@ -17,11 +15,12 @@ import Congratulations from "./components/user-start/congratulations.vue";
 import SignUpWith from "./components/user-start/signupwith.vue";
 import DonationDetails from "./components/campaign-section/launch-campaign/DonationDetails.component.vue";
 import MembershipTipe from "./components/campaign-section/launch-campaign/MembershipTipe.component.vue";
+import Preview from "./components/campaign-section/launch-campaign/Preview.component.vue";
 
 export default {
   name: 'App',
   components: { AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData, Login, SignUp,
-     ThankU, Congratulations, SignUpWith, DonationDetails, MembershipTipe}, 
+     ThankU, Congratulations, SignUpWith, DonationDetails, MembershipTipe, Preview}, 
   data(){
     return{
       drawer: false,

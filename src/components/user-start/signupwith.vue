@@ -3,9 +3,9 @@
         <div class="signupwith-2">
             <img class="logo1" src="./../../../public/1.png" alt="kind coins logo"/>
         </div>
-            <p class="crea-cuenta" style="grid-column: 2/3">Inicia sesión con</p>
-            <pv-button icon="pi pi-facebook" label="Facebook" style="grid-column: 2/3; background: #3B5997; width: 265.65px; height: 43px;"/>
-            <pv-button icon="pi pi-google" label="Google" style="grid-column: 2/3"/>
+            <p id="" class="crea-cuenta" style="grid-column: 2/3">Inicia sesión con</p>
+            <pv-button id="facebook" icon="pi pi-facebook" label="Facebook"/>
+            <pv-button id="google" icon="pi pi-google" label="Google"/>
             <p style="grid-column: 2/3">o</p>
             <p style="grid-column: 2/3">Ingresa con un 
                 <router-link to="/login">correo</router-link>
@@ -38,5 +38,19 @@ export default{
     width: 100px;
     height: 100px;
     border-radius: 100px;
+}
+#facebook{
+    grid-column: 2/3;
+    background: #3B5997;
+    width: 265.65px;
+    height: 43px;
+}
+#google{
+    grid-column: 2/3;
+    background: #F4F4F4;
+    width: 265.65px;
+    height: 43px;
+    color: #595959;
+    border: 1px solid #D6D6D6;
 }
 </style>

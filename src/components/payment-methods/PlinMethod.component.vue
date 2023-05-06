@@ -2,7 +2,7 @@
     <div class="plin-payment-dialog">
         <h2 class="plin-payment-dialog-title">Pago con Plin</h2>
         <p>Escanea el código QR para realizar el pago:</p>
-        <img src="../../assets/img/donacionesQR.png" alt="Código QR para pago con Plin" class="plin-payment-qr" />
+        <!-- <img src="../../assets/img/donacionesQR.png" alt="Código QR para pago con Plin" class="plin-payment-qr" /> -->
     </div>
 </template>
   

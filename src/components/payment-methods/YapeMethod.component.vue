@@ -4,7 +4,7 @@
         <p>Abre la app de Yape en tu teléfono móvil y escanea el siguiente código QR para hacer el pago:</p>
         <div class="yape-payment-qr-code">
             <!-- Inserta aquí el código QR de Yape -->
-            <img src="../../assets/img/donacionesQR.png" alt="Código QR de Yape" />
+            <!-- <img src="../../assets/img/donacionesQR.png" alt="Código QR de Yape" /> -->
         </div>
         <p>También puedes realizar el pago con Yape ingresando manualmente el número de teléfono:</p>
         <div class="yape-payment-phone-number">

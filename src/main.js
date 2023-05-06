@@ -24,6 +24,7 @@ import InputText from 'primevue/inputtext';
 import Badge from 'primevue/badge';
 import PanelMenu from 'primevue/panelmenu';
 import Breadcrumb from 'primevue/breadcrumb';
+import Textarea from 'primevue/textarea';
 
 import './assets/main.css'
 
@@ -42,6 +43,7 @@ const app = createApp(App)
 .component('pv-badge', Badge)
 .component('pv-panel-menu', PanelMenu)
 .component('pv-breadcrumb', Breadcrumb)
+.component('pv-textarea',Textarea)
 
 //app.use(router)
 

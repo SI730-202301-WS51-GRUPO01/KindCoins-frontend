@@ -79,4 +79,11 @@ ion-icon {
   font-size: 35px;
   padding: 10px;
 }
+
+.card {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 </style>

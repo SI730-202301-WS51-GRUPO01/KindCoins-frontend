@@ -20,7 +20,7 @@
             </div>
     
             <div id="text-area">
-                <Textarea id="text-box" v-model="value" rows="5" cols="75" />
+                <Textarea id="text-box" v-model="value" rows="5" cols="75"></Textarea>
             </div>
             <div id="text-selec">
                 <p id="selec">Seleccione los tipos de donaciones que desea recibir</p>
@@ -30,7 +30,7 @@
             </div>
             <div id="area-username">
                 <span class="p-float-label">
-                <Textarea v-model="value" :textarea="{style: {marginTop: '1.5em'}}" rows="3" cols="75" />
+                <Textarea v-model="value" :textarea="{style: {marginTop: '1.5em'}}" rows="3" cols="75"></Textarea>
                 <label>Ingrese cantidad de coins</label>
                 </span>
             </div>
@@ -64,7 +64,7 @@
     
     </template>
     
-    
+    <script></script>
     
     <style>
     #div-camps{

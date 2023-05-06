@@ -68,6 +68,10 @@
 
 </template>
 
+<script>
+
+</script>
+
 <style>
 #text-box2{
     left:37px;

@@ -67,7 +67,11 @@ const expandNode = (node) => {
 <style>
 
 .sidemenu{
-    width: calc(25% + 40px);
+  position: fixed;
+  top: 160px; /* altura del header */
+  left: 0;
+  width: calc(10% + 80px);
+  margin-left: 20px;
 }
 
 </style>

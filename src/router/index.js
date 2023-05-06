@@ -7,6 +7,7 @@ import ThankU from "../components/user-start/thanku.vue";
 import AppHome from "../components/layout/AppHome.vue";
 import CampaignData from "../components/campaign-section/launch-campaign/CampaignData.component.vue";
 import CampaignDetails from "../components/campaign-section/launch-campaign/CampaignDetails.component.vue";
+import Preview from "../components/campaign-section/launch-campaign/Preview.component.vue";
 import DonationDetails from "../components/campaign-section/launch-campaign/DonationDetails.component.vue";
 import MembershipTipe from "../components/campaign-section/launch-campaign/MembershipTipe.component.vue";
 import SelectMethod from "../components/payment-methods/SelectMethod.component.vue";
@@ -43,16 +44,36 @@ const router = createRouter({
             path:'/campaign-data',
             name: 'CampaignData',
             component: CampaignData,
+            meta: {
+                showSideMenu: true,
+                showHeader: true,
+            }
         },
         {
             path:'/donation-details',
             name: 'DonationDetails',
             component: DonationDetails,
+            meta: {
+                showHeader: true,
+            }
         },
         {
             path:'/campaign-details',
             name:'CampaignDetails',
             component: CampaignDetails,
+            meta: {
+                showSideMenu: true,
+                showHeader: true,
+            }
+        },
+        {
+            path:'/preview',
+            name: 'Preview',
+            component: Preview,
+            meta: {
+                showSideMenu: true,
+                showHeader: true,
+            }
         },
         {
             path:'/login',

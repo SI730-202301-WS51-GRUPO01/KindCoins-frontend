@@ -1,10 +1,13 @@
 <template>
   <div class="app-container">
+    <AppHeader v-if="$route.meta.showHeader"/>
     <div class="main-container">
+      <AppBreadcrumbComponent/>
       <RouterView/>
     </div>
-  </div>
+  <AppSideMenu v-if="$route.meta.showSideMenu"/>
   <AppFooter/>
+  </div>
 </template>
 
 <script>
@@ -23,6 +26,7 @@ import MembershipTipe from "./components/campaign-section/launch-campaign/Member
 import Preview from "./components/campaign-section/launch-campaign/Preview.component.vue";
 import AppHome from "./components/layout/AppHome.vue";
 import PaymentMethod from "./components/payment-methods/PaymentMethod.component.vue";
+import AppBreadcrumbComponent from "./components/layout/AppBreadcrumb.component.vue";
 
 export default {
   name: 'App',
@@ -38,6 +42,10 @@ export default {
         {label: "ThankU", to:"/thank-u"},
         {label:"Congratulations", to:"/congratulations"},
         {label:"Home", to:"/home"},
+        {label:"DonationDetails", to:"/donation-details"},
+        {label:"MembershipTipe", to:"/membership-tipe"},
+        {label:"Preview", to:"/preview"},
+        {label:"PaymentMethod", to:"/payment-method"},
       ],
     };
   },
@@ -49,5 +57,10 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 78vh;
+    margin: 0;
+    padding: 0;
+}
+.main-container {
+    padding-bottom: calc(8vh + 1.5rem); 
 }
 </style>

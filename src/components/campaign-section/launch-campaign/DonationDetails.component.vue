@@ -57,6 +57,9 @@ export default {
 </script>
 
 <style scoped>
+.class-full{
+    height: calc(80vh + 40px);
+}
 .title-monetary{
     font-size: 14px;
     font-weight: bold;

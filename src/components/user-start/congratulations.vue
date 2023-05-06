@@ -10,6 +10,10 @@
     </div>
 </template>
 
+<script>
+
+</script>
+
 <style>
 .congrats-2{
     grid-column: 2/3;

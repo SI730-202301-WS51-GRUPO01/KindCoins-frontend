@@ -83,10 +83,10 @@ export default {
 .donation-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 40%;
     height: 100%;
     /* margin-top: 50px; */
-    align-items: flex-end;
+    /* align-items: right; */
 }
 .donation-content {
     display: flex;

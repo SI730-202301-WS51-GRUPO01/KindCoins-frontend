@@ -42,7 +42,7 @@
         </div>
     </div>
 
-<div id="container">
+<!-- <div id="container">
     <div id="card-img">
         <p id="text-campañas">
             Ultimas campañas
@@ -64,7 +64,7 @@
         </template>
     </pv-card>
     </div>
-</div>
+</div> -->
 
 </template>
 

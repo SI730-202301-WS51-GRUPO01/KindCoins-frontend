@@ -2,12 +2,15 @@
   <div class="app-container">
     <AppHeader v-if="$route.meta.showHeader"/>
     <div class="main-container">
-      <RouterView/>
+      <div class="component-container">
+        <RouterView/>
+      </div>
     </div>
-  <AppSideMenu v-if="$route.meta.showSideMenu"/>
-  <AppFooter/>
+    <AppSideMenu v-if="$route.meta.showSideMenu"/>
+    <AppFooter/>
   </div>
 </template>
+
 
 <script>
 import AppHeader from "@/components/layout/AppHeader.component.vue"
@@ -55,12 +58,17 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 78vh;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .main-container {
   height: 100%;
   padding-bottom: calc(30vh + 1.5rem); 
-
+}
+.component-container {
+  flex: 1;
+  overflow-y: auto;
+  min-height: calc(78vh - 150px); /*ajusta el valor en función de la altura de los componentes de encabezado y pie de página*/
+  padding: 1.5rem;
 }
 </style>

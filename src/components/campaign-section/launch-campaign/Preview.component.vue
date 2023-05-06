@@ -3,6 +3,9 @@
         <span id="first-sect" style=" font-family: 'Roboto';color: #909399;">Campañas /</span>
         <span style="font-family: 'Roboto';color: #131414;">Crear campaña </span>
     </div>
+  <div id="select-method-box">
+    <SelectMethodComponent/>
+  </div>
     <div id="box-section-camp">
 
         <span id="page-camp">Paso 5 de 5 </span>
@@ -54,7 +57,7 @@
             <button id="donar-palestin2">Publicar</button>
         </div>
     </div >
- <pv-card id="card-palestin" style="width: 20em">
+ <!-- <pv-card id="card-palestin" style="width: 20em">
         <template #header>
             <img src="../../../../public/ganado_sequia_africa.jpg" alt="sequia" width="320" height="258"/>
         </template>
@@ -68,15 +71,16 @@
         <template #footer>
             <button id="donar-palestin">DONAR AHORA</button>
         </template>
-    </pv-card>
+    </pv-card> -->
 </template>
 
 <style>
     #div-camps {
         box-sizing: border-box;
-        display: inline-block;
+  display: flex;
+  align-items: center;
         flex-direction: row;
-        align-items: flex-start;
+        /* align-items: flex-start; */
         padding: 10px 40px;
         gap: 40px;
         position: relative;
@@ -88,6 +92,21 @@
         border-radius: 8px;
     }
 
+    #select-method-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        position: relative;
+        width: 65%;
+        height: 44px;
+        left: 75%;
+        z-index: 20;
+        top: 5px;
+        border: 1px solid #DCDFE6;
+        border-radius: 8px;
+}
     #page-camp {
         position: absolute;
         width: 74px;
@@ -123,7 +142,7 @@
     /*---------------------- section info--------------------------*/
     #box-section-camp {
         position: relative;
-        width: 29%;
+        width: calc(35% + 300px);
         height: 1000px;
         left: 20%;
         top: 20px;
@@ -356,7 +375,9 @@
 </style>
 
 <script>
+import SelectMethodComponent from '../../payment-methods/SelectMethod.component.vue';
 export default {
-    name: 'Preview'
+    name: "Preview",
+    components: { SelectMethodComponent }
 }
 </script>

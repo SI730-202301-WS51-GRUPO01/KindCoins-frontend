@@ -40,7 +40,7 @@
                 </router-link>
             </div>
         </div>
-        <div id="card-img">
+        <!-- <div id="card-img">
             <p id="text-campañas">
                 Ultimas campañas
             </p>
@@ -61,7 +61,7 @@
             </template>
         </pv-card>
         </div>
-    
+     -->
     </template>
     
     <script></script>

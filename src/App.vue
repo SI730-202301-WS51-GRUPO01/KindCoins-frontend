@@ -2,7 +2,6 @@
   <div class="app-container">
     <AppHeader v-if="$route.meta.showHeader"/>
     <div class="main-container">
-      <AppBreadcrumbComponent/>
       <RouterView/>
     </div>
   <AppSideMenu v-if="$route.meta.showSideMenu"/>
@@ -60,6 +59,8 @@ export default {
     padding: 0;
 }
 .main-container {
-    padding-bottom: calc(8vh + 1.5rem); 
+  height: 100%;
+  padding-bottom: calc(30vh + 1.5rem); 
+
 }
 </style>

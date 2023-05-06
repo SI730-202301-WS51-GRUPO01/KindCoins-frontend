@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import PrimeVue from "primevue/config";
-//import router from './router'
+import router from './router'
 
 // App Theme
 import 'primevue/resources/themes/md-light-indigo/theme.css';
@@ -50,6 +50,6 @@ const app = createApp(App)
 .component('pv-accordiontab', AccordionTab)
 .component('pv-checkbox', Checkbox)
 
-//app.use(router)
+app.use(router)
 
 app.mount('#app')

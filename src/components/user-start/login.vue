@@ -12,14 +12,17 @@
             <p>¿Olvidaste tu contraseña?</p>
             <pv-button label="Iniciar sesion"/>
             <p>¿Todavía no tienes cuenta?</p>
-            <p>Crea una cuenta</p>
+            <p>
+                <router-link to="/sign-up-with">Crea una cuenta</router-link>
+            </p>
         </div>
     </div>
 </template>
 
 <script>
-import {ref} from 'vue';
-const value = ref(null);
+export default{
+    name: 'Login'
+}
 </script>
 
 <style>

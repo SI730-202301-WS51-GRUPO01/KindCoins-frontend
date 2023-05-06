@@ -1,10 +1,5 @@
 <template>
-  <div class="app-container">
-    <div class="content-container">
-      <SignUpWith></SignUpWith>
-  </div>
-  <AppFooter></AppFooter>
-</div>
+  <RouterView />
 </template>
 
 <script>
@@ -23,7 +18,19 @@ export default {
   name: 'App',
   components: { AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData, Login, SignUp,
      ThankU, Congratulations, SignUpWith}, 
-}
+  data(){
+    return{
+      drawer: false,
+      items:[
+        {label: "SignUpWith", to:"/"},
+        {label:"Login", to:"/login"},
+        {label: "SignUp", to:"/signup"},
+        {label: "ThankU", to:"/thank-u"},
+        {label:"Congratulations", to:"/congratulations"}
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>

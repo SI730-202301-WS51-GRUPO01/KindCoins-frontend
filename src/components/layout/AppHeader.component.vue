@@ -2,7 +2,7 @@
     <div class="class-full">
         <pv-menubar class="menu-bar">
             <template #start>
-                <pv-button> 
+                <pv-button text rounded> 
                     <img src="https://i.postimg.cc/6QvxVCSG/logo.png" alt="logo" class="h-3rem">
                 </pv-button>               
             </template>

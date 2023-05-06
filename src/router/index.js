@@ -55,6 +55,7 @@ const router = createRouter({
             component: DonationDetails,
             meta: {
                 showHeader: true,
+                showSideMenu: true,
             }
         },
         {

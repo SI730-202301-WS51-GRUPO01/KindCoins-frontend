@@ -58,7 +58,9 @@ export default {
 
 <style scoped>
 .class-full{
-    height: calc(80vh + 40px);
+  height: calc(80vh + 40px);
+  margin-left: 300px; 
+  padding-left: calc(15vw + 40px);
 }
 .title-monetary{
     font-size: 14px;

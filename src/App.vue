@@ -26,7 +26,6 @@ import MembershipTipe from "./components/campaign-section/launch-campaign/Member
 import Preview from "./components/campaign-section/launch-campaign/Preview.component.vue";
 import AppHome from "./components/layout/AppHome.vue";
 import PaymentMethod from "./components/payment-methods/PaymentMethod.component.vue";
-import AppBreadcrumbComponent from "./components/layout/AppBreadcrumb.component.vue";
 
 export default {
   name: 'App',

@@ -1,5 +1,7 @@
 <template>
-  <RouterView/>
+  <AppHeader></AppHeader>
+  <DonationDetails></DonationDetails>
+  <AppFooter></AppFooter>
 </template>
 
 <script>
@@ -13,11 +15,13 @@ import SignUp from "./components/user-start/signup.vue";
 import ThankU from "./components/user-start/thanku.vue";
 import Congratulations from "./components/user-start/congratulations.vue";
 import SignUpWith from "./components/user-start/signupwith.vue";
+import DonationDetails from "./components/campaign-section/launch-campaign/DonationDetails.component.vue";
+import MembershipTipe from "./components/campaign-section/launch-campaign/MembershipTipe.component.vue";
 
 export default {
   name: 'App',
   components: { AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData, Login, SignUp,
-     ThankU, Congratulations, SignUpWith}, 
+     ThankU, Congratulations, SignUpWith, DonationDetails, MembershipTipe}, 
   data(){
     return{
       drawer: false,

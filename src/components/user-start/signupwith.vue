@@ -4,7 +4,7 @@
             <img class="logo1" src="./../../../public/1.png" alt="kind coins logo"/>
         </div>
             <p class="crea-cuenta" style="grid-column: 2/3">Inicia sesión con</p>
-            <pv-button icon="pi pi-facebook" label="Facebook" style="grid-column: 2/3; background: #3B5997;"/>
+            <pv-button icon="pi pi-facebook" label="Facebook" style="grid-column: 2/3; background: #3B5997; width: 265.65px; height: 43px;"/>
             <pv-button icon="pi pi-google" label="Google" style="grid-column: 2/3"/>
             <p style="grid-column: 2/3">o</p>
             <p style="grid-column: 2/3">Ingresa con un 

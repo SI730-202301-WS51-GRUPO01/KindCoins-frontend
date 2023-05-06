@@ -28,6 +28,11 @@ import Breadcrumb from 'primevue/breadcrumb';
 import Divider from 'primevue/divider';
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
+//DonationCampaign
+import InputNumber from 'primevue/inputnumber';
+import 'primeicons/primeicons.css';
+import Dropdown from 'primevue/dropdown';
+
 import './assets/main.css'
 
 const app = createApp(App)
@@ -49,6 +54,8 @@ const app = createApp(App)
 .component('pv-accordion', Accordion)
 .component('pv-accordiontab', AccordionTab)
 .component('pv-checkbox', Checkbox)
+.component('pv-inputNumber', InputNumber)
+.component('pv-dropdown', Dropdown)
 
 app.use(router)
 

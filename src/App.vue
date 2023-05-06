@@ -11,7 +11,6 @@
   </div>
 </template>
 
-
 <script>
 import AppHeader from "@/components/layout/AppHeader.component.vue"
 import AppFooter from "@/components/layout/AppFooter.component.vue"

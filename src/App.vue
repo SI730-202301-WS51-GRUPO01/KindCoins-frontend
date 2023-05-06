@@ -1,5 +1,6 @@
 <template>
-  <Preview></Preview>
+  <!-- <Preview></Preview> -->
+  <RouterView></RouterView>
 </template>
 
 <script>
@@ -19,17 +20,20 @@ import Preview from "./components/campaign-section/launch-campaign/Preview.compo
 
 export default {
   name: 'App',
-  components: { AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData, Login, SignUp,
-     ThankU, Congratulations, SignUpWith, DonationDetails, MembershipTipe, Preview}, 
-  data(){
-    return{
+  components: {
+    AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData, Login, SignUp,
+    ThankU, Congratulations, SignUpWith, DonationDetails, MembershipTipe, Preview
+  },
+  data() {
+    return {
       drawer: false,
-      items:[
-        {label: "SignUpWith", to:"/sign-up-with"},
-        {label:"Login", to:"/login"},
-        {label: "SignUp", to:"/signup"},
-        {label: "ThankU", to:"/thank-u"},
-        {label:"Congratulations", to:"/congratulations"}
+      items: [
+        { label: "SignUpWith", to: "/sign-up-with" },
+        { label: "Login", to: "/login" },
+        { label: "SignUp", to: "/signup" },
+        { label: "ThankU", to: "/thank-u" },
+        { label: "Congratulations", to: "/congratulations" },
+        { label: "Preview", to: "/preview" }
       ],
     };
   },
@@ -42,10 +46,12 @@ export default {
   flex-direction: column;
   min-height: 100vh;
 }
+
 .app-footer {
   margin-top: auto;
 }
-.content-container{
+
+.content-container {
   flex-grow: 1;
 }
 </style>

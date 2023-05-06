@@ -4,40 +4,45 @@ import SignUp from "../components/user-start/signup.vue";
 import Login from "../components/user-start/login.vue";
 import Congratulations from "../components/user-start/congratulations.vue";
 import ThankU from "../components/user-start/thanku.vue";
-
+import Preview from "../components/campaign-section/launch-campaign/Preview.component.vue";
 const router = createRouter({
-    history: createWebHistory(),
-    routes:[
-        {
-            path:'/sign-up-with',
-            name: 'SignUpWith',
-            component: SignUpWith,
-        },
-        {
-            path:'/',
-            redirect: 'SignUpWith',
-        },
-        {
-            path:'/login',
-            name: 'Login',
-            component: Login,
-        },
-        {
-            path: '/congratulations',
-            name: 'Congratulations',
-            component: Congratulations,
-        },
-        {
-            path:'/sign-up',
-            name: 'SignUp',
-            component: SignUp,
-        },
-        {
-            path:'/thank-u',
-            name: 'ThankU',
-            component: ThankU,
-        }
-    ]
-})
+  history: createWebHistory(),
+  routes: [
+    {
+      path: "/sign-up-with",
+      name: "SignUpWith",
+      component: SignUpWith,
+    },
+    {
+      path: "/",
+      redirect: "SignUpWith",
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: Login,
+    },
+    {
+      path: "/congratulations",
+      name: "Congratulations",
+      component: Congratulations,
+    },
+    {
+      path: "/sign-up",
+      name: "SignUp",
+      component: SignUp,
+    },
+    {
+      path: "/thank-u",
+      name: "ThankU",
+      component: ThankU,
+    },
+    {
+      path: "/preview",
+      name: "Preview",
+      component: Preview,
+    },
+  ],
+});
 
-export default router
+export default router;

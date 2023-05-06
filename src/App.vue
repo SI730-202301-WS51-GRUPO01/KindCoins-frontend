@@ -1,5 +1,10 @@
 <template>
-  <Preview></Preview>
+  <div class="app-container">
+    <div class="main-container">
+      <RouterView/>
+    </div>
+  </div>
+  <AppFooter/>
 </template>
 
 <script>
@@ -16,11 +21,13 @@ import SignUpWith from "./components/user-start/signupwith.vue";
 import DonationDetails from "./components/campaign-section/launch-campaign/DonationDetails.component.vue";
 import MembershipTipe from "./components/campaign-section/launch-campaign/MembershipTipe.component.vue";
 import Preview from "./components/campaign-section/launch-campaign/Preview.component.vue";
+import AppHome from "./components/layout/AppHome.vue";
+import PaymentMethod from "./components/payment-methods/PaymentMethod.component.vue";
 
 export default {
   name: 'App',
   components: { AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData, Login, SignUp,
-     ThankU, Congratulations, SignUpWith, DonationDetails, MembershipTipe, Preview}, 
+     ThankU, Congratulations, SignUpWith, DonationDetails, MembershipTipe, Preview, AppHome, PaymentMethod}, 
   data(){
     return{
       drawer: false,
@@ -29,7 +36,8 @@ export default {
         {label:"Login", to:"/login"},
         {label: "SignUp", to:"/signup"},
         {label: "ThankU", to:"/thank-u"},
-        {label:"Congratulations", to:"/congratulations"}
+        {label:"Congratulations", to:"/congratulations"},
+        {label:"Home", to:"/home"},
       ],
     };
   },
@@ -40,12 +48,6 @@ export default {
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-.app-footer {
-  margin-top: auto;
-}
-.content-container{
-  flex-grow: 1;
+  min-height: 78vh;
 }
 </style>

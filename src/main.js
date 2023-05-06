@@ -29,6 +29,9 @@ import Divider from 'primevue/divider';
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
 import ProgressBar from 'primevue/progressbar';
+import Textarea from 'primevue/textarea';
+import Galleria from 'primevue/galleria';
+
 //DonationCampaign
 import InputNumber from 'primevue/inputnumber';
 import 'primeicons/primeicons.css';
@@ -58,6 +61,8 @@ const app = createApp(App)
 .component('pv-inputNumber', InputNumber)
 .component('pv-dropdown', Dropdown)
 .component('pv-progressbar', ProgressBar)
+.component('pv-textarea', Textarea)
+.component('pv-galleria', Galleria)
 
 app.use(router)
 

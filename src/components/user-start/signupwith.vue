@@ -3,16 +3,16 @@
         <div class="signupwith-2">
             <img class="logo1" src="./../../../public/1.png" alt="kind coins logo"/>
         </div>
-            <p id="" class="crea-cuenta" style="grid-column: 2/3">Inicia sesión con</p>
+            <p id="" class="crea-cuenta" style="grid-column: 2/3; font-family: 'Roboto'; font-size: 16px; color: #515151;">Inicia sesión con</p>
             <pv-button id="facebook" icon="pi pi-facebook" label="Facebook"/>
             <pv-button id="google" icon="pi pi-google" label="Google"/>
-            <p style="grid-column: 2/3">o</p>
-            <p style="grid-column: 2/3">Ingresa con un 
-                <router-link to="/login">correo</router-link>
+            <p style="grid-column: 2/3; font-family: 'Roboto'; font-size: 16px; color: #515151;">o</p>
+            <p style="grid-column: 2/3; font-family: 'Roboto'; font-size: 16px; color: #515151;">Ingresa con
+                <router-link to="/login" style="font-family: 'Roboto'; font-size: 16px; color: #0597A6;"> un correo</router-link>
             </p>
-            <p style="grid-column: 2/3">¿Todavía no tienes una cuenta?</p>
+            <p style="grid-column: 2/3; font-family: 'Roboto'; font-size: 16px; color: #515151;">¿Todavía no tienes una cuenta?</p>
             <p style="grid-column: 2/3">
-                <router-link to="/sign-up">Crea una aquí</router-link>
+                <router-link to="/sign-up" style="font-family: 'Roboto'; font-size: 16px; color: #0597A6;">Crea una aquí</router-link>
             </p>
     </div>
 </template>
@@ -35,9 +35,10 @@ export default{
     grid-column: 2/3;
 }
 .logo1{
-    width: 100px;
-    height: 100px;
+    width: 112px;
+    height: 112px;
     border-radius: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 #facebook{
     grid-column: 2/3;

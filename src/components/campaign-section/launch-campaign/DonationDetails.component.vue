@@ -30,6 +30,9 @@
             </div>          
             <h3 class="subtitle">Marque la ubicación de la campaña</h3>
             <GoogleMap></GoogleMap>  
+            <router-link to="/membership-tipe">
+                <pv-button>Siguiente</pv-button>
+            </router-link>
         </div>
     </div>
 

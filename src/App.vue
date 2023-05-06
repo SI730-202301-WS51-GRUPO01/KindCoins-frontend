@@ -1,5 +1,5 @@
 <template>
-  <RouterView />
+  <RouterView/>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
     return{
       drawer: false,
       items:[
-        {label: "SignUpWith", to:"/"},
+        {label: "SignUpWith", to:"/sign-up-with"},
         {label:"Login", to:"/login"},
         {label: "SignUp", to:"/signup"},
         {label: "ThankU", to:"/thank-u"},

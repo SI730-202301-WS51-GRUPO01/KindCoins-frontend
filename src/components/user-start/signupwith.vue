@@ -4,13 +4,15 @@
             <img class="logo1" src="./../../../public/1.png" alt="kind coins logo"/>
         </div>
             <p class="crea-cuenta" style="grid-column: 2/3">Inicia sesión con</p>
-            <pv-button icon="pi pi-facebook" label="Facebook" style="grid-column: 2/3"/>
+            <pv-button icon="pi pi-facebook" label="Facebook" style="grid-column: 2/3; background: #3B5997;"/>
             <pv-button icon="pi pi-google" label="Google" style="grid-column: 2/3"/>
             <p style="grid-column: 2/3">o</p>
-            <p style="grid-column: 2/3">Ingresa con un correo</p>
+            <p style="grid-column: 2/3">Ingresa con un 
+                <router-link to="/login">correo</router-link>
+            </p>
             <p style="grid-column: 2/3">¿Todavía no tienes una cuenta?</p>
             <p style="grid-column: 2/3">
-                <router-link to="/login">Crea una aquí</router-link>
+                <router-link to="/sign-up">Crea una aquí</router-link>
             </p>
     </div>
 </template>

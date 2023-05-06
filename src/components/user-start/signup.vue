@@ -21,7 +21,9 @@
             </div>
             <pv-checkbox v-model="checked" :binary="true"/>
             <p>Acepto los Términos y condiciones</p>
-            <pv-button label="Crear mi cuenta"/>
+            <router-link to="/thank-u">
+                <pv-button label="Crear mi cuenta"/>
+            </router-link>
         </div>
     </div>
 </template>

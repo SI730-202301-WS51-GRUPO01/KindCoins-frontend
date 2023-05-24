@@ -1,13 +1,13 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Andrea Sofia",
-        "lastname": "Alfaro Salinas",
-        "dni": "numero",
-        "phone": "numero",
-        "email": "correo",
-        "password": "contraseña"
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "name": "Andrea Sofia",
+      "lastname": "Alfaro Salinas",
+      "dni": "numero",
+      "phone": "numero",
+      "email": "correo",
+      "password": "contraseña"
+    }
+  ]
+}

@@ -23,11 +23,12 @@
 <style scoped>
 .sticky{
     background-color: #0597A6;
+    border:#0597A6;
 }
 .screen-image{
     background-image: url('../../../public/Slide2.jpg');
     background-size: cover;
     background-position:top;
-    height: 670px;
+    height: 800px;
 }
 </style>

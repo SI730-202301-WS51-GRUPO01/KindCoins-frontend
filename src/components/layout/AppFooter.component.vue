@@ -5,7 +5,7 @@
           <div class="flex flex-row justify-content-between pb-2">
               <div class="flex flex-row ">
                   <div class="pr-2">
-                       <img src="https://i.postimg.cc/025x5J7S/Flag.png" alt="Flag">
+                       <img src="https://i.postimg.cc/025x5J7S/Flag.png" alt="Flag" style="width: 3vh;">
                   </div>
                  <div>
                       <p class="text-sm font-bold " style="color: #ffffff;">Perú</p>
@@ -15,26 +15,33 @@
               
               <div>
                   <ul class="ul-footer text-sm font-bold">
-                      <li>Español</li>
-                      <li>English</li>
-                      <li>Português</li>
-                      <li>Deutsch</li>
+                      <li class="mb-2">Español</li>
+                      <li class="mb-2">English</li>
+                      <li class="mb-2">Português</li>
+                      <li class="mb-2">Deutsch</li>
                   </ul>
               </div>
               <div>
               <ul class="ul-footer text-sm font-bold">
-                  <li>Políticas de privacidad</li>
-                  <li>Políticas de cookies</li>
-                  <li>Términos y condiciones</li>
-                  <li>Legal</li>
+                  <li class="mb-2">Políticas de privacidad</li>
+                  <li class="mb-2">Políticas de cookies</li>
+                  <li class="mb-2">Términos y condiciones</li>
+                  <li class="mb-2">Legal</li>
               </ul>
               </div>
-              <div class="socialMedia ">
-
-              <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
-              <a href=""><ion-icon name="logo-facebook"></ion-icon></a>
-              <a href=""><ion-icon name="logo-twitter"></ion-icon></a>
-              <a href=""><ion-icon name="logo-youtube"></ion-icon></a>
+              <div class="socialMedia">
+              <a href="https://www.instagram.com/">
+                <img src="../../../public/ig.png" alt="Instagram">
+              </a>
+              <a href="https://www.facebook.com/">
+                <img src="../../../public/fb.png" alt="Facebook">
+              </a>
+              <a href="https://twitter.com/home">
+                <img src="../../../public/twitter.png" alt="Twitter">
+              </a>
+              <a href="https://www.youtube.com/">
+                <img src="../../../public/yt.png" alt="Youtube">
+              </a>
               </div>
           </div>
 
@@ -43,7 +50,7 @@
           <div class="flex flex-row justify-content-between flex-wrap pt-2">
               <div class="footer-right text-sm">
                   <p>Copyright©2022 Todos los derechos reservados</p>
-                  <p>KindCoins.com S.A.C. Av.Ramirez 123,Piso 7,San Isidro,Lima,Perú.</p>
+                  <p>KindCoins.com S.A.C. Av.Ramirez 123, Piso 7, San Isidro, Lima, Perú.</p>
               </div>
               <div>
                   <img src="https://i.postimg.cc/MGLJdsLb/Pago-Seguro.png" alt="PagoSeguro">
@@ -60,8 +67,11 @@
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 .card{
   background-color: #0597A6;
+  font-family: 'Roboto', sans-serif;
+  
 }
 .ul-footer{
   text-decoration: none;
@@ -75,11 +85,19 @@
   color: white;
   text-decoration: none; 
 }
+.socialMedia a img{
+  width: 3vh;
+  height: 3vh;
+  margin-right: 3vh;
+}
 ion-icon {
   font-size: 35px;
   padding: 10px;
 }
-
+hr{
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
 .card {
   position: fixed;
   bottom: 0;

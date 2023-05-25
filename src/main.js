@@ -36,11 +36,8 @@ import Galleria from 'primevue/galleria';
 import InputNumber from 'primevue/inputnumber';
 import 'primeicons/primeicons.css';
 import Dropdown from 'primevue/dropdown';
-
-//DonationCampaign
-import InputNumber from 'primevue/inputnumber';
-import 'primeicons/primeicons.css';
-import Dropdown from 'primevue/dropdown';
+import FileUpload from 'primevue/fileupload';
+import Toast from 'primevue/toast';
 
 import './assets/main.css'
 
@@ -68,7 +65,8 @@ const app = createApp(App)
 .component('pv-progressbar', ProgressBar)
 .component('pv-textarea', Textarea)
 .component('pv-galleria', Galleria)
-
+.component('pv-file-upload', FileUpload)
+.component('pv-toast', Toast)
 app.use(router)
 
 app.mount('#app')

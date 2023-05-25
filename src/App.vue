@@ -6,8 +6,8 @@
         <RouterView/>
       </div>
     </div>
-    <AppSideMenu v-if="$route.meta.showSideMenu"/>
-    <AppFooter/>
+    
+    
   </div>
 </template>
 

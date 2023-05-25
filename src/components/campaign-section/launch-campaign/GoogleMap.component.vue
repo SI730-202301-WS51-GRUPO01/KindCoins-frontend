@@ -17,12 +17,9 @@
 /* eslint-disable no-undef */
 import {computed, ref} from 'vue'
 import {useGeolocation} from './useGeolocation'
-import {Loader} from '@googlemaps/js-api-loader'
-
+import { Loader } from '@googlemaps/js-api-loader'
 //Poner su propia API KEY de Google
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCo73cODrVrhwYpmhegeL8ptJUmO_I-M04'
-
-
 export default {
     name: 'google-maps',
     //setup se inicia mucho antes
@@ -40,18 +37,14 @@ export default {
             lat: coords.value.latitude,
             lng: coords.value.longitude
         }))
-
-
         const loader = new Loader({
             apiKey: GOOGLE_MAPS_API_KEY, libraries: ['places']
         });
         let mapDiv = ref(null)
         let map = ref(null)
         let marker = ref(null)
-
         let resul_lat = ref(null);
         let resul_lng = ref(null);
-
         let placeDet = ref({
             exterior: '',
             interior: '',
@@ -62,12 +55,9 @@ export default {
             municipio: '',
             estado: ''
         })
-
         //initMap
-
         loader.load().then(() => {
             let center;
-
             if (sessionStorage.getItem('center')) {
                 console.log('session')
                 center = JSON.parse(sessionStorage.getItem('center'))
@@ -80,20 +70,17 @@ export default {
                 resul_lng.value = center.lng;
                 resul_lat.value = center.lat;
             }
-
             map.value = new google.maps.Map(mapDiv.value, {
                 //centrado en posicion actual
                 center: center,
                 zoom: 18
             })
-
             marker = new google.maps.Marker({
                 map: map.value,
                 draggable: true,
                 animation: google.maps.Animation.DROP,
                 position: center
             })
-
             google.maps.event.addListener(marker, 'dragend', function () {
                 //alert(marker.getPosition())
                 resul_lat.value = marker.getPosition().lat()
@@ -105,7 +92,6 @@ export default {
                 //guardar center por arrastre
                 sessionStorage.setItem('center', JSON.stringify(center))
             })
-
             //autocompletar
             const placeInput = document.getElementById("place-input");
             const options = {
@@ -116,9 +102,7 @@ export default {
             google.maps.event.addListener(autocomplete, 'place_changed', function () {
                 //obtener el lugar
                 let place = autocomplete.getPlace();
-
                 sessionStorage.setItem('placeInput', placeInput.value)
-
                 center = place.geometry.location;
                 //guardar center por busqueda plces
                 sessionStorage.setItem('center', JSON.stringify(center))
@@ -126,14 +110,10 @@ export default {
                 map.value.setCenter(center)
                 //poner marcador en ese lugar
                 marker.setPosition(center)
-
                 sessionStorage.setItem('map', map.value);
                 sessionStorage.setItem('marker', marker.value);
-
-
                 resul_lat.value = center.lat();
                 resul_lng.value = center.lng();
-
                 //limpiar todo
                 exterior.value = ''
                 calle.value = ''
@@ -141,7 +121,6 @@ export default {
                 CP.value = ''
                 municipio.value = ''
                 estado.value = ''
-
                 placeDet.value = {
                     exterior: '',
                     interior: '',
@@ -152,7 +131,6 @@ export default {
                     municipio: '',
                     estado: '',
                 }
-
                 //guardar detalles
                 let detalles = place.address_components
                 for (let i = 0; i < detalles.length; i++) {
@@ -189,10 +167,7 @@ export default {
                 }
                 sessionStorage.setItem('placeDet', JSON.stringify(placeDet.value));
             });
-
         })
-
-
         return {
             //mapa
             mapDiv,
@@ -201,6 +176,5 @@ export default {
             placeDet
         }
     }
-
 }
 </script>

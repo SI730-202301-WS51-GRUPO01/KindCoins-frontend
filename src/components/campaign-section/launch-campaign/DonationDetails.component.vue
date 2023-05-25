@@ -30,13 +30,15 @@
             </div>          
             <h3 class="subtitle">Marque la ubicación de la campaña</h3>
             <GoogleMap></GoogleMap>  
+            <router-link to="/membership-tipe">
+                <pv-button>Siguiente</pv-button>
+            </router-link>
         </div>
     </div>
 
 </template>
 
 <script>
-
 import { ref } from "vue";
 import GoogleMap from "./GoogleMap.component.vue";
 const selectedCity = ref();
@@ -52,11 +54,14 @@ export default {
   name: 'Donation-detail',
   components: {GoogleMap}, 
 }
-
 </script>
 
 <style scoped>
-
+.class-full{
+  height: calc(80vh + 40px);
+  margin-left: 300px; 
+  padding-left: calc(15vw + 40px);
+}
 .title-monetary{
     font-size: 14px;
     font-weight: bold;
@@ -66,11 +71,9 @@ export default {
     font-size: 14px;
     padding-bottom: 15px;
 }
-
 .method{
     padding-bottom: 15px;
 }
-
 .title-material{
     font-size: 14px;
     font-weight: bold;

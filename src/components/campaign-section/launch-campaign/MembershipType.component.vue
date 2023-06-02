@@ -45,14 +45,13 @@
               </div>
               <p class="price align-self-center font-bold text-xl">Gratis</p>
             </div>
-          <router-link to="/preview">
-            <pv-button>Siguiente</pv-button>
-          </router-link>
+          
         </div>
     </div>
 </template>
 
 <script>
+
 </script>
 
 
@@ -60,6 +59,7 @@
 .card-container{
   background-color: #EBFFFD;
 }
+
 .tittle-plan{
     color: #0597A6;
     font-weight: bold;
@@ -75,4 +75,5 @@
   color: red;
   font-size: 0.75rem;
 }
+
 </style>

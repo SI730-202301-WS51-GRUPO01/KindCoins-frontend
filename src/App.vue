@@ -14,7 +14,7 @@
 <script>
 import AppHeader from "@/components/layout/AppHeader.component.vue"
 import AppFooter from "@/components/layout/AppFooter.component.vue"
-import CampaignCreated from "./components/campaign-section/launch-campaign/CampaignCreated.component.vue";
+
 import AppSideMenu from "./components/layout/AppSideMenu.component.vue";
 import CampaignData from "./components/campaign-section/launch-campaign/CampaignData.component.vue";
 import Login from "./components/user-start/login.vue";
@@ -30,7 +30,7 @@ import PaymentMethod from "./components/payment-methods/PaymentMethod.component.
 
 export default {
   name: 'App',
-  components: { AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData, Login, SignUp,
+  components: { AppFooter, AppHeader, AppSideMenu, CampaignData, Login, SignUp,
      ThankU, Congratulations, SignUpWith, DonationDetails, MembershipTipe, Preview, AppHome, PaymentMethod}, 
   data(){
     return{

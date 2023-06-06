@@ -42,14 +42,14 @@
 import { ref } from "vue";
 import GoogleMap from "./GoogleMap.component.vue";
 const selectedCity = ref();
-    const cities = ref([
-        { name: 'New York', code: 'NY' },
-        { name: 'Rome', code: 'RM' },
-        { name: 'London', code: 'LDN' },
-        { name: 'Istanbul', code: 'IST' },
-        { 
-            name: 'Paris', code: 'PRS' }
-    ]);
+const cities = ref([
+    { name: 'New York', code: 'NY' },
+    { name: 'Rome', code: 'RM' },
+    { name: 'London', code: 'LDN' },
+    { name: 'Istanbul', code: 'IST' },
+    { name: 'Paris', code: 'PRS' }
+]);
+
 export default {
   name: 'Donation-detail',
   components: {GoogleMap}, 

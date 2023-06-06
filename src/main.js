@@ -31,7 +31,8 @@ import AccordionTab from 'primevue/accordiontab';
 import ProgressBar from 'primevue/progressbar';
 import Textarea from 'primevue/textarea';
 import Galleria from 'primevue/galleria';
-
+import RadioButton from 'primevue/radiobutton';
+import Calendar from 'primevue/calendar';
 //DonationCampaign
 import InputNumber from 'primevue/inputnumber';
 import 'primeicons/primeicons.css';
@@ -67,6 +68,9 @@ const app = createApp(App)
 .component('pv-galleria', Galleria)
 .component('pv-file-upload', FileUpload)
 .component('pv-toast', Toast)
+.component('pv-radio-button', RadioButton)
+.component('pv-calendar', Calendar)
+
 app.use(router)
 
 app.mount('#app')

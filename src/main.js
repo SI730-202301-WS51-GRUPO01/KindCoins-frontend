@@ -3,6 +3,7 @@ import App from './App.vue'
 import PrimeVue from "primevue/config";
 import router from './router'
 
+
 // App Theme
 import 'primevue/resources/themes/md-light-indigo/theme.css';
 import 'primevue/resources/primevue.min.css';
@@ -31,6 +32,11 @@ import AccordionTab from 'primevue/accordiontab';
 import ProgressBar from 'primevue/progressbar';
 import Textarea from 'primevue/textarea';
 import Galleria from 'primevue/galleria';
+import TabView from 'primevue/tabview';
+import TabPanel from 'primevue/tabpanel';
+
+
+
 
 //DonationCampaign
 import InputNumber from 'primevue/inputnumber';
@@ -41,6 +47,8 @@ import './assets/main.css'
 
 const app = createApp(App)
 .use(PrimeVue, { ripple: true })
+.component('pv-tabview',TabView)
+.component('pv-tabpanel',TabPanel)
 .component('pv-card', Card)
 .component('pv-button', Button)
 .component('pv-select-button', SelectButton)

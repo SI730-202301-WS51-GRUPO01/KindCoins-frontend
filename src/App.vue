@@ -7,7 +7,8 @@
       </div>
     </div>
     <AppSideMenu v-if="$route.meta.showSideMenu"/>
-    <AppFooter/>
+ <!-- <AppFooter/>
+   -->
   </div>
 </template>
 

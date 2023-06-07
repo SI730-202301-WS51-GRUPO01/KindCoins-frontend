@@ -4,14 +4,13 @@
         </nav>
          
         <div class="caja">    
-                <div class="content" style="margin:25px"> 
+                <div class="content" style="margin-left:50px"> 
                     <div class="flex flex-column gap-2" style="margin: 10px; width: 80%;">
                     <p style="text-align: center;  color: #687781"> PASO 1 DE 5 </p>
                     <label for="username" class="txtbutton">Nombre de la campaña</label>
                     
                 <pv-input-text id="username" v-model="value" aria-describedby="username-help" />
-                    
-                    
+                   
                 </div>
 
                 <div class="flex flex-column gap-2" style="margin: 10px; width: 80%;">
@@ -26,9 +25,7 @@
                     <div>
                 
                     <img src="../../../../public/triangulo.jpg" style="width: 100%;height: 100%;">
-                
-                        
-                        </div>
+                      </div>
                     <div  style="margin-left:30px;">
                         <div >
                             <pv-button label="Editar" style="background-color:#409EFF;"/>
@@ -41,20 +38,17 @@
 
                 </div>
                 <small >Formato jpg/png,maximo 500kb</small>
-                
 
                 <div class="hola" >
                 <router-link to="/donation-details"> 
                     <pv-button  label="siguiente" style="background: #FFDE59;" />
                 </router-link>
             </div>
-        
-
             </div>
 
             <div class="dere" > 
             <p style="margin-left:20%;margin-bottom:20px ;" class="txtbutton"> Ultimas campañas</p>
-                <pv-card style="width: 100%;margin-left:16% ;">
+                <pv-card  class="cardimg" >
                 <template #header>
                     <img  alt="user header" src="public\card1.jpg" style="width: 100%;height: 200px;"/>
                 </template>
@@ -69,8 +63,6 @@
                     <pv-button label="Donar Ahora"  style="background: #0597A6;"/>
                 </template>
             </pv-card>
-
-
 
             </div>
       </div>
@@ -98,14 +90,13 @@
     },
   };
   </script>
-
-
   <style>
 
     .navdonaciones{
         margin: 10px auto;
         width: 80%;
     }
+    
     .txtbutton{
         color: #000000;
         font-family: 'Roboto';
@@ -127,6 +118,9 @@ padding-left: calc(13vw + 40px);
         .hola{
            margin-left: 65%;
         }
+        .cardimg{
+            width: 100%;margin-left:16% ;
+        }
     
     @media (max-width: 768px) {
         /* Cambiar a una columna cuando la pantalla sea más pequeña que 768px */
@@ -136,7 +130,11 @@ padding-left: calc(13vw + 40px);
         .hola{
             margin-left: 56%;
     }
+        .cardimg{
+            width: 80%;
+        }
 
     }
 
 </style>
+    

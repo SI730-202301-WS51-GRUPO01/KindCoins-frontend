@@ -1,137 +1,130 @@
+
+<!-- hola ,si quieres modificar el routeo esta en la linea 34 aprox -->
+
 <template>
+    <nav class="navdonaciones">
+      <pv-breadcrumb  :model="breadcrumbItems" ></pv-breadcrumb>
+    </nav>
 
-    <div id="div-camps"> 
-        <span id="first-sect" style=" font-family: 'Roboto';color: #909399;">Campañas /</span>
-        <span style="font-family: 'Roboto';color: #131414;">Crear campaña </span>
-    </div>
 
-    <div id="box-content">
-        <div id="img">
-            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSCmB96dGtBtE_H4kXPD5PgRrFUuyNI7w_edfXYV73VFJp86UPy" id="flecha">
-        </div>
+       
+    <div class="caja2" >
+   
+        <div class="content" style="margin: 25px;"> 
+         
+            <p style="text-align: center; color: #687781;margin: 20px;" > PASO 1 DE 5 </p>
 
-        <div id="pasos">
-            <p id="paso">Paso 1 de 5</p>
-        </div>
-        <div id="text-descrip">
-            <p id="descrip">Descripción de la campaña</p>
-            <div id="text-area">
-            <Textarea id="text-box" v-model="value" rows="1" cols="75" />
-        </div>
-        </div>
-        <div id="text-meta">
-            <p id="selec">Seleccione los tipos de donaciones que desea recibir</p>
-            <Textarea id="text-box2" v-model="value" rows="1" cols="75" />
-            <p id="meta">Foto de campaña</p>
-            <button id="boton-editar">EDITAR</button>
-            <p id="formato">Formato jpg/png, máximo 500kb</p>
-            <div id="foto">
-            <p id="doc">foto001.jpg</p>
-            <div>
-                <img id="docum" src="../../../../public/doc.jpg" alt="documento">
+            <div class="flex flex-column gap-2" style="margin: 10px; width: 90%; ">
+               
+                <label for="username" class="txtbutton">Descripcion de la campaña</label>
+                
+               <pv-input-text id="username" v-model="value" aria-describedby="username-help" style="height: 100px;" />
+                
+                
+            </div>
+            <div style="margin: 25px;">
+                <p class="txtbutton"> Seleccione los tipos de donaciones que desea recibir</p>
+
+                <div class="card flex flex-wrap justify-content-left gap-5" style="margin-top: 10px; display: flex;">
+                    <div class="flex align-items-center">
+                        <pv-checkbox v-model="donaciones" inputId="tipo1" name="donaciones" value="Dinero" />
+                        <label for="tipo1" class="ml-2"> Dinero </label>
+                    </div>
+                    <div class="flex align-items-center">
+                        <pv-checkbox v-model="donaciones" inputId="tipo2" name="donaciones" value="Alimentos" />
+                        <label for="tipo2" class="ml-2"> Alimentos </label>
+                    </div>
+                    <div class="flex align-items-center">
+                        <pv-checkbox v-model="donaciones" inputId="tipo3" name="donaciones" value="Ropa" />
+                        <label for="tipo3" class="ml-2"> Ropa </label>
+                    </div>
+                    <pv-input-text type="text" v-model="value" style="width:43%;" placeholder="juguetes,Ropa"/>
+                </div>
+            </div>
+
+            <div class="flex flex-column gap-2" style="margin: 10px; width: 90%;">
+                <label for="meta" class="txtbutton">Meta</label>
+                <pv-input-text id="meta" v-model="value" aria-describedby="meta-help" placeholder="Ingrese cantidad de coins"/>
+                
+            </div>
+            
+    
+            <div class="hola2">
+                <router-link to="/donation-details"> 
+                    <pv-button  label="siguiente" style="background: #FFDE59;" />
+                </router-link>
             </div>
         </div>
+
+        <div class="dere" style="margin: 25px; justify-content: center;"> 
+        <p class="txtbutton" style="margin-bottom: 20px;"> Ultimas campañas</p>
+            <pv-card style="width: 100%;margin: auto;">
+            <template #header>
+                <img  alt="user header" src="public\card1.jpg" style="width: 100%;height: 250px;"/>
+            </template>
+            <template #title> Alimenta familias en Palestina </template>
+            <template #content>
+                <p>
+                    Las Comidas compartidas proporcionarán a las familias de palestina
+                    un apoyo en efectivo para que puedan comprar alimentos en tiendas locales
+                </p>
+            </template>
+            <template #footer>
+                <pv-button label="Donar Ahora"  style="background: #0597A6;"/>
+            </template>
+        </pv-card>
         </div>
-        <div>
-            <img id="triangulos" src="../../../../public/triangulo.jpg" alt="triangulos">
-        </div>
-        <div>
-            <router-link to="/donation-details">
-            <button id="boton-siguiente">SIGUIENTE</button>
-            </router-link>
-        </div>
-    </div>
+      </div>
+  </template>
+  
+  <script>
+  import Breadcrumb from 'primevue/breadcrumb';
+  
+  export default {
+    components: {
+      Breadcrumb,
+    },
+    data() {
+      return {
+        breadcrumbItems: [
+          { label: 'Campañas', url: '/campaign-data' }, //pasar los path
+          { label: 'Crear Campañas', url: '/categoria/',disabled:true },
+        //en caso este en costruccion lo desabilitamos jjiji
+        ],
+        
+      };
+    },
+  };
+  
+  </script>
 
-<!-- <div id="container">
-    <div id="card-img">
-        <p id="text-campañas">
-            Ultimas campañas
-        </p>
-        <img id="lupita" src="../../../../public/lupa.png" alt="lupa">
-        <pv-card id="card-palestin" style="width: 20em">
-        <template #header>
-            <img src="../../../../public/niñacomiendo.jpg" alt="sequia" width="320" height="258"/>
-        </template>
-        <template #title> Apoya a las familias afectadas por la sequía en el Cuerno de África </template>
-        <template #content>
-            <p>
-                Las comidas compartidas proporcionarán apoyo en efectivo de emergencia a las familias afectadas por la
-                sequía en Etiopía, Kenia y Somalia.
-            </p>
-        </template>
-        <template #footer>
-            <button id="donar-palestin">DONAR AHORA</button>
-        </template>
-    </pv-card>
-    </div>
-</div> -->
+  <style>
 
-</template>
+    .navdonaciones{
+        margin: 10px auto;
+        width: 80%;       
+    }
 
-<script>
+    .caja2{
+        background-color: white;
+        width: 90%;
+        height: calc(78vh + 40px);
 
-</script>
+  padding-left: calc(13vw + 40px);
+        display: grid;
+        grid-template-columns:  60% 30%;
+    }
+    .hola2{
+        margin-left: 76%;
+    }
+    @media (max-width: 800px) {
+        /* Cambiar a una columna cuando la pantalla sea más pequeña que 768px */
+        .caja2 {
+        grid-template-columns: auto;
+        }
+        .hola2{
+        margin-left: 65%;
+    }
+    }
 
-<style>
-#text-box2{
-    left:37px;
-    top:55px;
-}
-#meta{
-    top:60px;
-}
-#triangulos{
-    width: 150px;
-    top:-45px;
-    left:40px;
-}
-#boton-siguiente{
-    top:-10px;
-    left: 500px;
-}
-#selec{
-    top:50px;
-}
-#boton-editar{
-    top:75px;
-    left:220px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px 16px;
-    gap: 16px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    color: #FFFFFF;
-    line-height: 36px;
-    background: #409EFF;
-    border: none;
-    border-radius: 4px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-#formato{
-    color: #606266;
-    left:40px;
-    top:190px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-size: 12px;
-}
-#doc{
-    top:80px;
-    left:250px;
-    color: #606266;
-}
-#docum{
-    left:220px;
-    width: 20px;
-    top:57px;
-}
-#container{
-    top:-40px;
-}
 </style>

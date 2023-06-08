@@ -14,94 +14,94 @@ import SelectMethod from "../components/payment-methods/SelectMethod.component.v
 import PaymentMethod from "../components/payment-methods/PaymentMethod.component.vue";
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes:[
-        {
-            path:'/sign-up-with',
-            name: 'SignUpWith',
-            component: SignUpWith,
-        },
-        {
-            path:'/',
-            redirect: '/home',
-        },
-        {
-            path:'/membership-tipe',
-            name:'MembershipTipe',
-            component: MembershipTipe,
-        },
-        {
-            path:'/payment-method',
-            name:'PaymentMethod',
-            component: PaymentMethod,
-        },
-        {
-            path:'/select-method',
-            name:'SelectMethod',
-            component: SelectMethod,
-        },
-        {
-            path:'/campaign-data',
-            name: 'CampaignData',
-            component: CampaignData,
-            meta: {
-                showSideMenu: true,
-                showHeader: true,
-            }
-        },
-        {
-            path:'/donation-details',
-            name: 'DonationDetails',
-            component: DonationDetails,
-            meta: {
-                showHeader: true,
-                showSideMenu: true,
-            }
-        },
-        {
-            path:'/campaign-details',
-            name:'CampaignDetails',
-            component: CampaignDetails,
-            meta: {
-                showSideMenu: true,
-                showHeader: true,
-            }
-        },
-        {
-            path:'/preview',
-            name: 'Preview',
-            component: Preview,
-            meta: {
-                showSideMenu: true,
-                showHeader: true,
-            }
-        },
-        {
-            path:'/login',
-            name: 'Login',
-            component: Login,
-        },
-        {
-            path: '/congratulations',
-            name: 'Congratulations',
-            component: Congratulations,
-        },
-        {
-            path:'/sign-up',
-            name: 'SignUp',
-            component: SignUp,
-        },
-        {
-            path:'/thank-u',
-            name: 'ThankU',
-            component: ThankU,
-        },
-        {
-            path:'/home',
-            name: 'Home',
-            component: AppHome,
-        }
-    ]
-})
+  history: createWebHistory(),
+  routes: [
+    {
+      path: "/sign-up-with",
+      name: "SignUpWith",
+      component: SignUpWith,
+    },
+    {
+      path: "/",
+      redirect: "/home",
+    },
+    {
+      path: "/membership-tipe",
+      name: "MembershipTipe",
+      component: MembershipTipe,
+    },
+    {
+      path: "/payment-method",
+      name: "PaymentMethod",
+      component: PaymentMethod,
+    },
+    {
+      path: "/select-method",
+      name: "SelectMethod",
+      component: SelectMethod,
+    },
+    {
+      path: "/campaign-data",
+      name: "CampaignData",
+      component: CampaignData,
+      meta: {
+        showSideMenu: true,
+        showHeader: true,
+      },
+    },
+    {
+      path: "/donation-details",
+      name: "DonationDetails",
+      component: DonationDetails,
+      meta: {
+        showHeader: true,
+        showSideMenu: true,
+      },
+    },
+    {
+      path: "/campaign-details",
+      name: "CampaignDetails",
+      component: CampaignDetails,
+      meta: {
+        showSideMenu: true,
+        showHeader: true,
+      },
+    },
+    {
+      path: "/preview",
+      name: "Preview",
+      component: Preview,
+      meta: {
+        showSideMenu: true,
+        showHeader: true,
+      },
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: Login,
+    },
+    {
+      path: "/congratulations",
+      name: "Congratulations",
+      component: Congratulations,
+    },
+    {
+      path: "/sign-up",
+      name: "SignUp",
+      component: SignUp,
+    },
+    {
+      path: "/thank-u",
+      name: "ThankU",
+      component: ThankU,
+    },
+    {
+      path: "/home",
+      name: "Home",
+      component: AppHome,
+    },
+  ],
+});
 
-export default router
+export default router;

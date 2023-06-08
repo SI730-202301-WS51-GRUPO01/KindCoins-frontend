@@ -12,6 +12,7 @@ import DonationDetails from "../components/campaign-section/launch-campaign/Dona
 import MembershipTipe from "../components/campaign-section/launch-campaign/MembershipTipe.component.vue";
 import SelectMethod from "../components/payment-methods/SelectMethod.component.vue";
 import PaymentMethod from "../components/payment-methods/PaymentMethod.component.vue";
+import CampaignCreated from "../components/campaign-section/launch-campaign/CampaignCreated.component.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -62,6 +63,15 @@ const router = createRouter({
       path: "/campaign-details",
       name: "CampaignDetails",
       component: CampaignDetails,
+      meta: {
+        showSideMenu: true,
+        showHeader: true,
+      },
+    },
+    {
+      path: "/campaign-created",
+      name: "CampaignCreated",
+      component: CampaignCreated,
       meta: {
         showSideMenu: true,
         showHeader: true,

@@ -1,68 +1,54 @@
 <template>
-  <div>
-    <!-- Wrapper Card -->
-    <Card class="wrapper-card">
-      <template #title>
-        <div class="p-text-center">
-          <h3>Vista previa</h3>
-        </div>
-      </template>
+  <div class="campaign-container">
+    <!-- First Part -->
+    <transition name="slide-fade">
+      <Card class="campaign-card">
+        <template #title>
+          <div class="p-d-flex p-jc-between">
+            <span>Campaign Title</span>
+            <img
+              class="campaign-image"
+              src="public\niñacomiendo.jpg"
+              alt="Campaign Image"
+            />
+          </div>
+        </template>
 
-      <template #content>
-        <!-- First Part -->
-        <transition name="slide-fade">
-          <Card class="campaign-card">
-            <template #title>
-              <div class="p-d-flex p-jc-between">
-                <span>Campaign Title</span>
-                <img
-                  class="campaign-image"
-                  src="public\niñacomiendo.jpg"
-                  alt="Campaign Image"
-                />
-              </div>
-            </template>
+        <template #content>
+          <div class="p-d-flex p-jc-between">
+            <span>Goal: $1000</span>
+            <span>Donors: 100</span>
+          </div>
 
-            <template #content>
-              <div class="p-d-flex p-jc-between">
-                <span>Goal: $1000</span>
-                <span>Donors: 100</span>
-              </div>
+          <ProgressBar
+            :value="progressValue"
+            class="progress-bar"
+          ></ProgressBar>
+          <div class="p-d-flex p-jc-between">
+            <span>Amount Raised: $500</span>
+            <span>Completion: {{ progressValue }}%</span>
+          </div>
+        </template>
+      </Card>
+    </transition>
 
-              <ProgressBar
-                :value="progressValue"
-                class="progress-bar"
-              ></ProgressBar>
-              <div class="p-d-flex p-jc-between">
-                <span>Amount Raised: $500</span>
-                <span>Completion: {{ progressValue }}%</span>
-              </div>
-            </template>
-          </Card>
-        </transition>
+    <!-- Second Part -->
+    <transition name="slide-fade">
+      <Card class="summary-card">
+        <template #title> Campaign Summary </template>
 
-        <!-- Second Part -->
-        <transition name="slide-fade">
-          <Card class="summary-card">
-            <template #title> Campaign Summary </template>
-
-            <template #content>
-              <div class="p-d-flex p-jc-between">
-                <p>Campaign summary...</p>
-                <img
-                  class="summary-image"
-                  src="public\niñacomiendo.jpg"
-                  alt="Campaign Summary Image"
-                />
-              </div>
-            </template>
-          </Card>
-        </transition>
-
-        <!-- Third Part -->
-        <Button label="Publish" class="publish-button" />
-      </template>
-    </Card>
+        <template #content>
+          <div class="p-d-flex p-jc-between">
+            <p>Campaign summary...</p>
+            <img
+              class="summary-image"
+              src="public\niñacomiendo.jpg"
+              alt="Campaign Summary Image"
+            />
+          </div>
+        </template>
+      </Card>
+    </transition>
   </div>
 </template>
 
@@ -86,10 +72,11 @@ export default {
 </script>
 
 <style scoped>
-.wrapper-card {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid lightgray;
+.campaign-container {
   padding: 20px;
+  width: 80%;
+  /**center the */
+  margin: auto;
 }
 
 .campaign-card,
@@ -103,8 +90,9 @@ export default {
   max-height: 400px;
   width: 60%;
   position: relative;
-  top: -50px;
+  /* top: 50px; */
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .summary-image {
@@ -119,14 +107,6 @@ export default {
 
 .publish-button {
   animation: pulse 2s infinite;
-  width: 40%;
-  margin: auto;
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: gold;
-  color: black;
-  font-weight: bold;
 }
 
 /* Slide fade animation for the cards */

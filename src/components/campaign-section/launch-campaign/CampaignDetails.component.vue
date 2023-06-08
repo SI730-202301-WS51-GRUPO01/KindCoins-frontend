@@ -4,7 +4,7 @@
     <Card class="wrapper-card">
       <template #title>
         <div class="p-text-center">
-          <h2>Launch Campaign</h2>
+          <h3>Vista previa</h3>
         </div>
       </template>
 
@@ -51,7 +51,7 @@
                 <p>Campaign summary...</p>
                 <img
                   class="summary-image"
-                  src="campaign_summary_image.jpg"
+                  src="public\niñacomiendo.jpg"
                   alt="Campaign Summary Image"
                 />
               </div>
@@ -109,7 +109,7 @@ export default {
 
 .summary-image {
   object-fit: cover;
-  height: 200px;
+  max-height: 600px;
   width: 100%;
 }
 
@@ -119,6 +119,14 @@ export default {
 
 .publish-button {
   animation: pulse 2s infinite;
+  width: 40%;
+  margin: auto;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: gold;
+  color: black;
+  font-weight: bold;
 }
 
 /* Slide fade animation for the cards */

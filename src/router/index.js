@@ -31,15 +31,7 @@ const router = createRouter({
             name:'SelectMethod',
             component: SelectMethod,
         },
-        {
-            path:'/preview',
-            name: 'Preview',
-            component: Preview,
-            meta: {
-                showSideMenu: true,
-                showHeader: true,
-            }
-        },
+
         {
             path:'/login',
             name: 'Login',
@@ -94,7 +86,13 @@ const router = createRouter({
                     path:'payment-method',
                     name:'PaymentMethod',
                     component: PaymentMethod,
-                }
+                },
+                {
+                    path:'preview',
+                    name: 'Preview',
+                    component: Preview,
+
+                },
             ]
           }
 

@@ -54,32 +54,27 @@ const cities = ref([
 ]);
 
 export default {
-  name: "Donation-detail",
-  components: { GoogleMap },
-};
+  name: 'Donation-detail',
+  components: {GoogleMap}, 
+}
 </script>
 
 <style scoped>
-.class-full{
-  height: calc(80vh + 40px);
-  margin-left: 300px; 
-  padding-left: calc(15vw + 40px);
-}
 .title-monetary{
     font-size: 14px;
     font-weight: bold;
     padding-bottom: 7px;
 }
-.subtitle {
-  font-size: 14px;
-  padding-bottom: 15px;
+.subtitle{
+    font-size: 14px;
+    padding-bottom: 15px;
 }
-.method {
-  padding-bottom: 15px;
+.method{
+    padding-bottom: 15px;
 }
-.title-material {
-  font-size: 14px;
-  font-weight: bold;
-  padding-bottom: 15px;
+.title-material{
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 15px;
 }
 </style>

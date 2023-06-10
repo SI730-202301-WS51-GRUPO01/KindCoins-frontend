@@ -1,5 +1,5 @@
 <template>
-    <div class="card flex flex-column align-items-center ">
+    <div class="card align-items-center pt-5">
         <pv-panel-menu v-model:expandedKeys="expandedKeys" :model="items" class="sidemenu" />
     </div>
 </template>
@@ -66,12 +66,5 @@ const expandNode = (node) => {
 
 <style>
 
-.sidemenu{
-  position: fixed;
-  top: 160px; /* altura del header */
-  left: 0;
-  width: calc(10% + 80px);
-  margin-left: 20px;
-}
 
 </style>

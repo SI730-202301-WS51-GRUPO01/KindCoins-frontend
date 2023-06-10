@@ -24,6 +24,14 @@
                 </pv-file-upload>
             </div>
         </div>
+        <div>
+            <div class="flex justify-content-end">
+                <router-link to="/main-content/campaign-details">
+                    <pv-button>Siguiente</pv-button>
+                </router-link>
+            </div>
+
+        </div>
     </div>
 </template>
 

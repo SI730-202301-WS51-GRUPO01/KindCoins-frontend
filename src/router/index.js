@@ -12,6 +12,7 @@ import DonationDetails from "../components/campaign-section/launch-campaign/Dona
 import MembershipTipe from "../components/campaign-section/launch-campaign/MembershipTipe.component.vue";
 import SelectMethod from "../components/payment-methods/SelectMethod.component.vue";
 import PaymentMethod from "../components/payment-methods/PaymentMethod.component.vue";
+import AppMainContent from "../components/layout/AppMainContent.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -40,7 +41,7 @@ const router = createRouter({
             name:'SelectMethod',
             component: SelectMethod,
         },
-        {
+/*         {
             path:'/campaign-data',
             name: 'CampaignData',
             component: CampaignData,
@@ -48,7 +49,7 @@ const router = createRouter({
                 showSideMenu: true,
                 showHeader: true,
             }
-        },
+        }, */
         {
             path:'/donation-details',
             name: 'DonationDetails',
@@ -58,7 +59,7 @@ const router = createRouter({
                 showSideMenu: true,
             }
         },
-        {
+/*         {
             path:'/campaign-details',
             name:'CampaignDetails',
             component: CampaignDetails,
@@ -66,7 +67,7 @@ const router = createRouter({
                 showSideMenu: true,
                 showHeader: true,
             }
-        },
+        }, */
         {
             path:'/preview',
             name: 'Preview',
@@ -100,7 +101,25 @@ const router = createRouter({
             path:'/home',
             name: 'Home',
             component: AppHome,
-        }
+        },
+        {
+            path: '/main-content',
+            name: 'AppMainContent',
+            component: AppMainContent,
+            children: [
+              {
+                path: 'campaign-data',
+                name: 'CampaignData',
+                component: CampaignData,
+              },
+              {
+                path: 'campaign-details',
+                name: 'CampaignDetails',
+                component: CampaignDetails,
+              }
+            ]
+          }
+
     ]
 })
 

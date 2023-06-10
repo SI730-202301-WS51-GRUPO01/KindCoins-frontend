@@ -17,7 +17,7 @@
             <p style="grid-column: 2/3; color: #0597A6; text-decoration-line: underline; font-size: 12px; font-family: 'Roboto'">
                 ¿Olvidaste tu contraseña?
             </p>
-            <router-link to="/campaign-data" style="grid-column: 2/3">
+            <router-link to="/main-content" style="grid-column: 2/3">
                 <pv-button label="Iniciar sesion" style="color:white; background-color:#FFDE59; margin-top:20px"/>
             </router-link>
             <p style="grid-column: 2/3; margin-top:20px; font-family: 'Roboto'; color: #515151">¿Todavía no tienes cuenta?</p>

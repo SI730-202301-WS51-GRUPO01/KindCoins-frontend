@@ -1,13 +1,10 @@
 <template>
   <div class="app-container">
-    <AppHeader v-if="$route.meta.showHeader"/>
     <div class="main-container">
       <div class="component-container">
         <RouterView/>
       </div>
-    </div>
-    
-    
+    </div>  
   </div>
 </template>
 
@@ -35,18 +32,6 @@ export default {
   data(){
     return{
       drawer: false,
-      items:[
-        {label: "SignUpWith", to:"/sign-up-with"},
-        {label:"Login", to:"/login"},
-        {label: "SignUp", to:"/signup"},
-        {label: "ThankU", to:"/thank-u"},
-        {label:"Congratulations", to:"/congratulations"},
-        {label:"Home", to:"/home"},
-        {label:"DonationDetails", to:"/donation-details"},
-        {label:"MembershipTipe", to:"/membership-tipe"},
-        {label:"Preview", to:"/preview"},
-        {label:"PaymentMethod", to:"/payment-method"},
-      ],
     };
   },
 };

@@ -19,6 +19,7 @@
                   <pv-button text @click="visible = true">
                   <p class="price align-self-center font-bold text-xl">S/ 19.99</p>
                   </pv-button>
+                  
                   <pv-dialog v-model:visible="visible" modal header="Header" >
                     <SelectMethod/>
                     <template #footer>

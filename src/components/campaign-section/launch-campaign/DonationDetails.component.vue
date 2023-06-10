@@ -1,6 +1,6 @@
 <template>
     <div class="class-full flex-column flex m-5">
-        <div class="monetary-donations pb-3">
+        <div class="monetary-donations pt-4 pb-3">
             <p class="title-monetary">Recepción de donaciones monetarias</p>
             <p class="subtitle">Cuentas bancarias</p>
             <div class="method flex flex-row flex-wrap gap-3">
@@ -30,12 +30,15 @@
             </div>          
             <h3 class="subtitle">Marque la ubicación de la campaña</h3>
             <GoogleMap></GoogleMap>  
-            <router-link to="/membership-tipe">
-                <pv-button>Siguiente</pv-button>
-            </router-link>
+        </div>
+        <div class="pb-3">
+            <div class="flex justify-content-end">
+                <router-link to="/main-content/membership-tipe">
+                    <pv-button>Siguiente</pv-button>
+                </router-link>
+            </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -57,11 +60,6 @@ export default {
 </script>
 
 <style scoped>
-.class-full{
-  height: calc(80vh + 40px);
-  margin-left: 300px; 
-  padding-left: calc(15vw + 40px);
-}
 .title-monetary{
     font-size: 14px;
     font-weight: bold;

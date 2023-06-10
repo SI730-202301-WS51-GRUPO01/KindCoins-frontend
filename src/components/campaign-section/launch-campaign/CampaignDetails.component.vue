@@ -1,6 +1,6 @@
 <template>
     <div class="class-full flex-column flex m-5">
-        <div class="campaign-description pb-3">
+        <div class="campaign-description pt-3 pb-3">
             <p class="pb-2">Descripción de la campaña</p>
             <pv-textarea  class="w-full" type="text" placeholder="Ej ."/>
         </div>
@@ -27,6 +27,13 @@
             <div  class="w-full">
                 <p class="pb-2">Fecha de fin de campaña</p>
                 <pv-calendar v-model="date" dateFormat="dd/mm/yy" />
+            </div>
+        </div>
+        <div class="pb-3">
+            <div class="flex justify-content-end">
+                <router-link to="/main-content/donation-details">
+                    <pv-button>Siguiente</pv-button>
+                </router-link>
             </div>
         </div>
     </div>

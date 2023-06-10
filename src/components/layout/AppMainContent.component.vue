@@ -2,13 +2,15 @@
     <div class="app-container">
         <AppHeader/>
     </div>
-    <div class="card mx-4">
+    <div class="card mx-4 ">
         <div class="flex flex-row ">
             <div>
                 <AppSideMenu/>
             </div>
-            <div class="w-full">
-                <router-view></router-view>
+            <div class="w-full mx-5">
+                <div class=" bg-white border-round-lg">
+                    <router-view></router-view>
+                </div>   
             </div>
             <div class="">
                 <CampaignCard/>
@@ -22,10 +24,11 @@ import AppHeader from "@/components/layout/AppHeader.component.vue"
 import AppSideMenu from "@/components/layout/AppSideMenu.component.vue";
 import CampaignCard from "@/components/campaign-section/my-campaigns/CampaignCard.component.vue";
 import CampaignData from "../campaign-section/launch-campaign/CampaignData.component.vue";
+import DonationDetails from "../campaign-section/launch-campaign/DonationDetails.component.vue";
 
 export default {
 name: 'AppMainContent',
-components: { AppHeader,AppSideMenu,CampaignCard, CampaignData }, 
+components: { AppHeader,AppSideMenu,CampaignCard, CampaignData,DonationDetails }, 
 data(){
     return{
     };

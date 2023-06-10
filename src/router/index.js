@@ -27,11 +27,6 @@ const router = createRouter({
             redirect: '/home',
         },
         {
-            path:'/membership-tipe',
-            name:'MembershipTipe',
-            component: MembershipTipe,
-        },
-        {
             path:'/payment-method',
             name:'PaymentMethod',
             component: PaymentMethod,
@@ -41,33 +36,6 @@ const router = createRouter({
             name:'SelectMethod',
             component: SelectMethod,
         },
-/*         {
-            path:'/campaign-data',
-            name: 'CampaignData',
-            component: CampaignData,
-            meta: {
-                showSideMenu: true,
-                showHeader: true,
-            }
-        }, */
-        {
-            path:'/donation-details',
-            name: 'DonationDetails',
-            component: DonationDetails,
-            meta: {
-                showHeader: true,
-                showSideMenu: true,
-            }
-        },
-/*         {
-            path:'/campaign-details',
-            name:'CampaignDetails',
-            component: CampaignDetails,
-            meta: {
-                showSideMenu: true,
-                showHeader: true,
-            }
-        }, */
         {
             path:'/preview',
             name: 'Preview',
@@ -107,16 +75,26 @@ const router = createRouter({
             name: 'AppMainContent',
             component: AppMainContent,
             children: [
-              {
-                path: 'campaign-data',
-                name: 'CampaignData',
-                component: CampaignData,
-              },
-              {
-                path: 'campaign-details',
-                name: 'CampaignDetails',
-                component: CampaignDetails,
-              }
+                {
+                    path: 'campaign-data',
+                    name: 'CampaignData',
+                    component: CampaignData,
+                },
+                {
+                    path: 'campaign-details',
+                    name: 'CampaignDetails',
+                    component: CampaignDetails,
+                },
+                {
+                    path:'donation-details',
+                    name: 'DonationDetails',
+                    component: DonationDetails,
+                },
+                {
+                    path:'membership-tipe',
+                    name:'MembershipTipe',
+                    component: MembershipTipe,
+                },
             ]
           }
 

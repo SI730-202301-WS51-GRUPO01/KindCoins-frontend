@@ -1,6 +1,6 @@
 <template>
     <div class="class-full flex-column flex m-5">
-        <div class="campaign-name pb-3">
+        <div class="campaign-name pt-3 pb-3">
             <p class="pb-2">Nombre de campaña</p>
             <pv-input-text class="w-full" type="text" placeholder="Ej." />
         </div>
@@ -24,13 +24,12 @@
                 </pv-file-upload>
             </div>
         </div>
-        <div>
+        <div class="pb-3">
             <div class="flex justify-content-end">
                 <router-link to="/main-content/campaign-details">
                     <pv-button>Siguiente</pv-button>
                 </router-link>
             </div>
-
         </div>
     </div>
 </template>

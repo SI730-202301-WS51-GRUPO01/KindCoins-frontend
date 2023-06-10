@@ -39,6 +39,7 @@ import 'primeicons/primeicons.css';
 import Dropdown from 'primevue/dropdown';
 import FileUpload from 'primevue/fileupload';
 import Toast from 'primevue/toast';
+import Dialog from 'primevue/dialog';
 
 import './assets/main.css'
 
@@ -70,6 +71,7 @@ const app = createApp(App)
 .component('pv-toast', Toast)
 .component('pv-radio-button', RadioButton)
 .component('pv-calendar', Calendar)
+.component('pv-dialog', Dialog)
 
 app.use(router)
 

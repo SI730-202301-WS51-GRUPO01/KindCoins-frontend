@@ -27,11 +27,6 @@ const router = createRouter({
             redirect: '/home',
         },
         {
-            path:'/payment-method',
-            name:'PaymentMethod',
-            component: PaymentMethod,
-        },
-        {
             path:'/select-method',
             name:'SelectMethod',
             component: SelectMethod,
@@ -95,6 +90,11 @@ const router = createRouter({
                     name:'MembershipTipe',
                     component: MembershipTipe,
                 },
+                {
+                    path:'payment-method',
+                    name:'PaymentMethod',
+                    component: PaymentMethod,
+                }
             ]
           }
 

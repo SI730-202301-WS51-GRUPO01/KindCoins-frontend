@@ -28,7 +28,8 @@ const items = ref([
           {
               key: '2_0',
               label: 'Crear campaña',
-              icon: 'pi pi-fw pi-user-plus'
+              icon: 'pi pi-fw pi-user-plus',
+              to: '/main-content/campaign-data',
           },
           {
               key: '2_1',

@@ -57,8 +57,83 @@ const categories = [
     { key: '4', name: 'Servicios' },
 ];
 
+export default {
+  components: {
+    Card,
+    ProgressBar,
+    Button,
+  },
+  data() {
+    return {
+      progressValue: 50, // example value for the progress bar
+    };
+  },
+};
 </script>
 
-<style>
+<style scoped>
+.campaign-container {
+  padding: 20px;
+  width: 80%;
+  /**center the */
+  margin: auto;
+}
 
+.campaign-card,
+.summary-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.campaign-image {
+  object-fit: cover;
+  max-height: 400px;
+  width: 60%;
+  position: relative;
+  /* top: 50px; */
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.summary-image {
+  object-fit: cover;
+  max-height: 600px;
+  width: 100%;
+}
+
+.progress-bar {
+  transition: width 2s;
+}
+
+.publish-button {
+  animation: pulse 2s infinite;
+}
+
+/* Slide fade animation for the cards */
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+/* Pulse animation for the publish button */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 </style>

@@ -1,24 +1,24 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 import PrimeVue from "primevue/config";
-import router from './router'
+import router from "./router";
 
 // App Theme
-import 'primevue/resources/themes/md-light-indigo/theme.css';
-import 'primevue/resources/primevue.min.css';
-import 'primeicons/primeicons.css';
+import "primevue/resources/themes/md-light-indigo/theme.css";
+import "primevue/resources/primevue.min.css";
+import "primeicons/primeicons.css";
 // Add PrimeFlex
-import 'primeflex/primeflex.css';
-import 'primeicons/primeicons.css';
+import "primeflex/primeflex.css";
+import "primeicons/primeicons.css";
 // Add Components
 import Card from "primevue/card";
-import Checkbox from 'primevue/checkbox';
+import Checkbox from "primevue/checkbox";
 import Button from "primevue/button";
 import Sidebar from "primevue/sidebar";
 import Avatar from "primevue/avatar";
 import Menu from "primevue/menu";
 import Menubar from "primevue/menubar";
-import TieredMenu from 'primevue/tieredmenu';
+import TieredMenu from "primevue/tieredmenu";
 import SelectButton from "primevue/selectbutton";
 import Toolbar from "primevue/toolbar";
 import InputText from 'primevue/inputtext';
@@ -41,7 +41,7 @@ import FileUpload from 'primevue/fileupload';
 import Toast from 'primevue/toast';
 import Dialog from 'primevue/dialog';
 
-import './assets/main.css'
+import "./assets/main.css";
 
 const app = createApp(App)
 .use(PrimeVue, { ripple: true })
@@ -75,4 +75,4 @@ const app = createApp(App)
 
 app.use(router)
 
-app.mount('#app')
+app.mount("#app");

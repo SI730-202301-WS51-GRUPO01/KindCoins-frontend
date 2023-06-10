@@ -2,7 +2,7 @@
   <div class="app-container">
     <div class="main-container">
       <div class="component-container">
-        <RouterView/>
+        <RouterView />
       </div>
     </div>  
   </div>
@@ -38,11 +38,17 @@ export default {
 </script>
 
 <style scoped>
+.content-container {
+  flex-grow: 1;
+}
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 78vh;
   margin: 0;
   padding: 0;
+}
+.app-footer {
+  margin-top: auto;
 }
 </style>

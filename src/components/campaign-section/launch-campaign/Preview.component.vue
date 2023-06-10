@@ -3,8 +3,8 @@
     <!-- Wrapper Card -->
     <Card class="wrapper-card">
       <template #title>
-        <div class="p-text-center">
-          <h3>Vista previa</h3>
+        <div class="pv-text-center">
+          <h4 style="font-weight: bold">Vista previa</h4>
         </div>
       </template>
 
@@ -13,29 +13,41 @@
         <transition name="slide-fade">
           <Card class="campaign-card">
             <template #title>
-              <div class="p-d-flex p-jc-between">
-                <span>Campaign Title</span>
+              <div>
                 <img
                   class="campaign-image"
                   src="public\niñacomiendo.jpg"
                   alt="Campaign Image"
                 />
+                <span class="text-center" style="font-weight: bold"
+                  >Alimenta familias en Palestina</span
+                >
               </div>
             </template>
 
             <template #content>
-              <div class="p-d-flex p-jc-between">
-                <span>Goal: $1000</span>
-                <span>Donors: 100</span>
+              <div class="line">
+                <div class="left">
+                  <i class="pi pi-heart p-mr-1"></i>
+                  <span>Goal: $1000</span>
+                </div>
+                <div class="right">
+                  <i class="pi pi-user p-ml-1"></i>
+                  <span>Donor: 100</span>
+                </div>
               </div>
 
               <ProgressBar
                 :value="progressValue"
                 class="progress-bar"
               ></ProgressBar>
-              <div class="p-d-flex p-jc-between">
-                <span>Amount Raised: $500</span>
-                <span>Completion: {{ progressValue }}%</span>
+              <div class="line">
+                <div class="left">
+                  <span>$500 collected</span>
+                </div>
+                <div class="right">
+                  <span>Completion: {{ progressValue }}%</span>
+                </div>
               </div>
             </template>
           </Card>
@@ -44,11 +56,37 @@
         <!-- Second Part -->
         <transition name="slide-fade">
           <Card class="summary-card">
-            <template #title> Campaign Summary </template>
+            <template #title>Resumen</template>
 
             <template #content>
               <div class="p-d-flex p-jc-between">
-                <p>Campaign summary...</p>
+                <h3 class="text-center" style="font-weight: bold">
+                  Las comidas compartidas proporcionarán a las familias de
+                  Palestina un apoyo en efectivo para que puedan comprar
+                  alimentos en tiendas locales.
+                </h3>
+                <p class="text-center">
+                  Dos tercios de la población de Gaza —alrededor de 1.3 millones
+                  de personas— no pueden alimentar a sus familias debido a
+                  décadas de conflicto. Los disturbios políticos en la Franja de
+                  Gaza y los bloqueos continuos en el mar, la tierra y el aire a
+                  lo largo de Cisjordania dejan a la región dependiente de las
+                  importaciones. Esto significa que Palestina es muy vulnerable
+                  a las crisis globales y al aumento de los precios de los
+                  alimentos. Como uno de sus mayores importadores de harina de
+                  trigo y aceite, la guerra en Ucrania ha llevado al aumento de
+                  los precios de los alimentos en Palestina - un 3.7% de aumento
+                  en un año. El Programa Mundial de Alimentos está sobre el
+                  terreno proporcionando apoyo en efectivo a 300.000 palestinos
+                  vulnerables cada mes. La cuestión en Palestina no es la falta
+                  de alimentos, sino que la gente no puede permitirse comprarla.
+                  Es por eso que el WFP ofrece asistencia en efectivo para que
+                  las familias puedan obtener los alimentos que necesitan
+                  mientras impulsan la economía local. Pueden gastar su dinero
+                  en más de 300 tiendas designadas en Cisjordania y Gaza. El WFP
+                  prioriza a las familias encabezadas por mujeres, a las
+                  personas con discapacidad y a las personas mayores con apoyo.
+                </p>
                 <img
                   class="summary-image"
                   src="public\niñacomiendo.jpg"
@@ -103,27 +141,37 @@ export default {
 
 .campaign-card,
 .summary-card {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
+  text-align: center;
 }
 
 .campaign-image {
   object-fit: cover;
   max-height: 400px;
   width: 60%;
-  position: relative;
-  top: -50px;
+  /* position: relative; */
+  display: block;
   margin: auto;
+  top: -50px;
+  border-radius: 20px;
+}
+.text-center {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .summary-image {
   object-fit: cover;
   max-height: 600px;
-  width: 100%;
+  width: 90%;
+  display: block;
+  margin: auto;
+  border-radius: 20px;
 }
 
 .progress-bar {
-  transition: width 2s;
+  height: 10px;
+  border-radius: 5px;
 }
 
 .publish-button {
@@ -164,5 +212,21 @@ export default {
   100% {
     transform: scale(1);
   }
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
 }
 </style>

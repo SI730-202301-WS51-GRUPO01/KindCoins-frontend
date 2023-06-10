@@ -17,18 +17,19 @@
             </div>
         </div>
     </div>
+    <div>
+        <AppFooter/>
+    </div>
 </template>
 
 <script>
 import AppHeader from "@/components/layout/AppHeader.component.vue"
+import AppFooter from "@/components/layout/AppFooter.component.vue"
 import AppSideMenu from "@/components/layout/AppSideMenu.component.vue";
-import CampaignCard from "@/components/campaign-section/my-campaigns/CampaignCard.component.vue";
-import CampaignData from "../campaign-section/launch-campaign/CampaignData.component.vue";
-import DonationDetails from "../campaign-section/launch-campaign/DonationDetails.component.vue";
-
+import CampaignCard from "@/components/explore-section/CampaignCard.component.vue";
 export default {
 name: 'AppMainContent',
-components: { AppHeader,AppSideMenu,CampaignCard, CampaignData,DonationDetails }, 
+components: { AppHeader,AppSideMenu,AppFooter, CampaignCard }, 
 data(){
     return{
     };

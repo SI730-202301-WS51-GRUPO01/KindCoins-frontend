@@ -60,7 +60,10 @@
         </transition>
 
         <!-- Third Part -->
-        <Button label="Publish" class="publish-button" />
+        <Button label="Publish" class="publish-button" @click="visible = true" />
+        <pv-dialog v-model:visible="visible" modal >
+            <EndCampaignCreation/>
+        </pv-dialog>
       </template>
     </Card>
   </div>
@@ -70,16 +73,19 @@
 import Card from "primevue/card";
 import ProgressBar from "primevue/progressbar";
 import Button from "primevue/button";
+import EndCampaignCreation from "@/components/campaign-section/launch-campaign/EndCampaignCreation.component.vue"
 
 export default {
   components: {
     Card,
     ProgressBar,
     Button,
+    EndCampaignCreation
   },
   data() {
     return {
       progressValue: 50, // example value for the progress bar
+      visible: false,
     };
   },
 };

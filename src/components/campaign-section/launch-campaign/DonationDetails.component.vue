@@ -1,5 +1,8 @@
 <template>
     <div class="class-full flex-column flex m-5">
+        <div class="pt-5 pb-3 flex justify-content-center">
+            <h3 class="font-bold">Paso 3 de 5</h3>
+        </div>
         <div class="monetary-donations pt-4 pb-3">
             <p class="title-monetary">Recepción de donaciones monetarias</p>
             <p class="subtitle">Cuentas bancarias</p>

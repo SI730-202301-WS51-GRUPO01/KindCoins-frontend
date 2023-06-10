@@ -13,6 +13,7 @@ const items = ref([
       key: '0',
       label: 'Explorar',
       icon: 'pi pi-fw pi-file',
+      to: '/explore',
       
   },
   {
@@ -66,6 +67,8 @@ const expandNode = (node) => {
 </script>
 
 <style>
-
+.sidemenu{
+    width: 180px;
+}
 
 </style>

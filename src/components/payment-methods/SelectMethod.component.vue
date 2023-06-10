@@ -65,9 +65,6 @@
         <button class="donation-continue-button" @click="openPaymentDialog">
           Continuar
         </button>
-
-        <!-- Payment method dialog -->
-        <PaymentMethod v-model="showPaymentDialog" />
       </div>
     </div>
   </div>

@@ -1,7 +1,10 @@
 <template>
-  <div class="card">
+  <div class="card mt-5 mb-5">
+    <div class="pt-5 pb-3 flex justify-content-center">
+            <h3 class="font-bold">Paso 4 de 5</h3>
+        </div>
       <div class="flex flex-column justify-content-center flex-wrap p-5 " id="Planes">
-            
+
           <!-- Plan gratuito -->
                     
             <div class="flex flex-row card-container justify-content-between  flex-wrap border-round-2xl p-5">              
@@ -20,11 +23,10 @@
                 <p class="price align-self-center font-bold text-xl">S/ 19.99</p>
                 </pv-button>
                 
-                <pv-dialog v-model:visible="visible" modal header="Header" >
-                  <SelectMethod/>
-                  <template #footer>
-                    <pv-button text @click="visible = false">Cerrar</pv-button>
-                  </template>
+                <pv-dialog v-model:visible="visible" modal >
+                    <div>
+                      <PaymentMethod/>
+                    </div> 
                 </pv-dialog>
               
             </div>
@@ -42,12 +44,19 @@
                 <li>Proridad en soporte</li>
               </ul>
             </div>
-            <pv-button text>
+
+            <pv-button text @click="visible = true">
               <div class="align-self-center">
                 <p class="price font-bold text-xl text-right">S/ 215.99</p>
                 <p class="color-descuento"><u>10% de descuento</u></p>
               </div>
             </pv-button>
+
+            <pv-dialog v-model:visible="visible" modal >
+              <div>
+                <PaymentMethod/>
+              </div> 
+            </pv-dialog>
           </div>
           <br>
           <div class="flex flex-row card-container justify-content-between  flex-wrap border-round-2xl p-5 ">
@@ -58,9 +67,11 @@
                 <li>Duración máxima de campaña de 1 mes</li>
               </ul>
             </div>
-            <pv-button text>
-              <p class="price align-self-center font-bold text-xl">Gratis</p>
-            </pv-button>
+            <router-link to="/main-content/preview">
+              <pv-button text>
+                <p class="price align-self-center font-bold text-xl">Gratis</p>
+              </pv-button>
+            </router-link>
           </div>
 
       </div>

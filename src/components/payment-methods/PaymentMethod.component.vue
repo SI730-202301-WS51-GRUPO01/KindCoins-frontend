@@ -1,77 +1,75 @@
 <template>
-  <div class="payment-dialog" v-if="modelValue">
-    <div class="payment-dialog-overlay" @click="closeDialog"></div>
     <div class="payment-dialog-content">
-      <h2 class="payment-dialog-title">Seleccione un método de pago:</h2>
-      <div class="payment-methods">
-        <button
-          class="payment-button visa"
-          v-on:click="selectedPaymentMethod = 'visa'"
-        >
-          <input
-            type="radio"
-            id="visa"
-            name="payment-method"
-            value="visa"
-            v-model="selectedPaymentMethod"
-          />
-          <label
-            for="visa"
-            v-bind:class="{ selected: selectedPaymentMethod === 'visa' }"
-            >Visa</label
-          >
-        </button>
+      <p class="payment-dialog-title">Seleccione un método de pago:</p>
+        <div class="payment-methods">
+            <button
+            class="payment-button visa"
+            v-on:click="selectedPaymentMethod = 'visa'"
+            >
+            <input
+                type="radio"
+                id="visa"
+                name="payment-method"
+                value="visa"
+                v-model="selectedPaymentMethod"
+            />
+            <label
+                for="visa"
+                v-bind:class="{ selected: selectedPaymentMethod === 'visa' }"
+                >Visa</label
+            >
+            </button>
+
+            <button
+            class="payment-button yape"
+            v-on:click="selectedPaymentMethod = 'yape'"
+            >
+            <input
+                type="radio"
+                id="yape"
+                name="payment-method"
+                value="yape"
+                v-model="selectedPaymentMethod"
+            />
+            <label
+                for="yape"
+                v-bind:class="{ selected: selectedPaymentMethod === 'yape' }"
+                >Yape</label
+            >
+            </button>
+
+            <button
+            class="payment-button plin"
+            v-on:click="selectedPaymentMethod = 'plin'"
+            >
+            <input
+                type="radio"
+                id="plin"
+                name="payment-method"
+                value="plin"
+                v-model="selectedPaymentMethod"
+            />
+            <label
+                for="plin"
+                v-bind:class="{ selected: selectedPaymentMethod === 'plin' }"
+                >Plin</label
+            >
+            </button>
+        </div>
+
+        <div v-if="showPaymentMethod">
+            <component :is="selectedPaymentMethod + '-payment-dialog'" />
+        </div>
 
         <button
-          class="payment-button yape"
-          v-on:click="selectedPaymentMethod = 'yape'"
+            class="donation-continue-button"
+            v-if="!showPaymentMethod"
+            v-on:click="continueToSelectedPaymentMethod"
         >
-          <input
-            type="radio"
-            id="yape"
-            name="payment-method"
-            value="yape"
-            v-model="selectedPaymentMethod"
-          />
-          <label
-            for="yape"
-            v-bind:class="{ selected: selectedPaymentMethod === 'yape' }"
-            >Yape</label
-          >
+            Continuar
         </button>
-
-        <button
-          class="payment-button plin"
-          v-on:click="selectedPaymentMethod = 'plin'"
-        >
-          <input
-            type="radio"
-            id="plin"
-            name="payment-method"
-            value="plin"
-            v-model="selectedPaymentMethod"
-          />
-          <label
-            for="plin"
-            v-bind:class="{ selected: selectedPaymentMethod === 'plin' }"
-            >Plin</label
-          >
-        </button>
-      </div>
-
-      <div v-if="showPaymentMethod">
-        <component :is="selectedPaymentMethod + '-payment-dialog'" />
-      </div>
-
-      <button
-        class="donation-continue-button"
-        v-if="!showPaymentMethod"
-        v-on:click="continueToSelectedPaymentMethod"
-      >
-        Continuar
-      </button>
     </div>
-  </div>
+
 </template>
 
 <script>
@@ -92,9 +90,7 @@ export default {
     };
   },
   methods: {
-    closeDialog() {
-      this.$emit("update:modelValue", false);
-    },
+
     continueToSelectedPaymentMethod() {
       if (this.selectedPaymentMethod) {
         this.showPaymentMethod = true;

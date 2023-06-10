@@ -101,7 +101,7 @@ hr {
   margin-bottom: 1vh;
 }
 .card {
-  position: fixed;
+
   bottom: 0;
   left: 0;
   right: 0;

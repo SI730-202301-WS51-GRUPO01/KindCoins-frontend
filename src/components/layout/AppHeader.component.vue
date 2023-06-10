@@ -2,11 +2,11 @@
   <div class="class-full">
     <pv-menubar class="menu-bar">
       <template #start>
-        <pv-button text rounded>
+        <pv-button  text rounded>
           <img
             src="https://i.postimg.cc/6QvxVCSG/logo.png"
             alt="logo"
-            class="h-3rem"
+            class="h-3rem w-3rem"
           />
         </pv-button>
       </template>
@@ -15,15 +15,13 @@
         <div
           class="card flex flex-wrap justify-content-center gap-4 align-items-center"
         >
-          <span class="p-input-icon-left">
-            <i class="pi pi-search" />
+          <span>     
             <pv-input-text
               v-model="value1"
               placeholder="Buscar"
-              class="p-inputtext-sm"
+              class="p-inputtext-sm" 
             />
           </span>
-          <!-- <pv-badge value="3" severity="danger"></pv-badge> -->
           <i
             v-badge="2"
             class="pi pi-bell p-overlay-badge"

@@ -64,7 +64,9 @@
           class="full-width"
         />
       </div>
-      <button type="submit" class="visa-payment-button">Procesar pago</button>
+      <router-link to="/main-content/preview">
+        <button type="submit" class="visa-payment-button" >Procesar pago</button>
+      </router-link>
     </form>
   </div>
 </template>

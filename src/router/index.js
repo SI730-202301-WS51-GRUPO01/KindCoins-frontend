@@ -27,12 +27,6 @@ const router = createRouter({
             redirect: '/home',
         },
         {
-            path:'/select-method',
-            name:'SelectMethod',
-            component: SelectMethod,
-        },
-
-        {
             path:'/login',
             name: 'Login',
             component: Login,

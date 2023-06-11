@@ -1,7 +1,7 @@
 <template>
 <AppHeader/>
 <div class="explore-section">
-    <div class="grid-container">
+    <div class="grid-container ml-4">
         <div class="grid-item">
             <AppSideMenu></AppSideMenu>
         </div>

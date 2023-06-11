@@ -14,8 +14,9 @@
                     </router-link>
                 </div>
                 <div class="flex align-items-center justify-content-center">
-                    <!-- Aqui poner el routing de Explorar -->
+                    <router-link to="/explore">
                     <pv-button class="bt-explorar justify-content-center" raised >Ir a explorar</pv-button>
+                    </router-link>
                 </div>
             </div>           
         </div>

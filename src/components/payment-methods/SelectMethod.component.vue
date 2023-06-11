@@ -1,5 +1,5 @@
 <template>
-  <div class="donation-container">
+  <div class="donation-container mt-5">
     <div class="donation-content">
       <div class="donation-selection">
         <!-- Rest of the donation selection code -->
@@ -62,9 +62,14 @@
             />
           </div>
         </div>
-        <button class="donation-continue-button" @click="openPaymentDialog">
+        <button class="donation-continue-button" @click="visible = true">
           Continuar
         </button>
+        <pv-dialog v-model:visible="visible" modal >
+        <div>
+          <PaymentMethod/>
+        </div> 
+        </pv-dialog>
       </div>
     </div>
   </div>
@@ -84,6 +89,7 @@ export default {
       customDonationAmount: 0,
       selectedPaymentMethod: "",
       showPaymentDialog: false,
+      visible: false,
     };
   },
   methods: {

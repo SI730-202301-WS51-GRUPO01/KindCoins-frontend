@@ -7,7 +7,9 @@
             <template #title>{{ card.title }}</template>
             <template #content>{{ card.resume }}</template>
             <template #footer>
-                <pv-button label="Donar ahora" class="donar-btn"/>
+                <router-link to="/donation/campaign-profile">
+                    <pv-button label="Donar ahora" class="donar-btn"/>
+                </router-link>
             </template>
         </pv-card>
     </div>
@@ -52,3 +54,4 @@ export default{
 .card-container .donar-btn{
     background-color:#0597A6;
 }
+</style>

@@ -13,7 +13,7 @@
                 </div>   
             </div>
             <div class="mb-3">
-                <CampaignCard/>
+                <SelectMethod/>
             </div>
         </div>
     </div>
@@ -26,11 +26,11 @@
 import AppHeader from "@/components/layout/AppHeader.component.vue"
 import AppFooter from "@/components/layout/AppFooter.component.vue"
 import AppSideMenu from "@/components/layout/AppSideMenu.component.vue";
-import CampaignCard from "@/components/campaign-section/my-campaigns/CampaignCard.component.vue";
+import SelectMethod from "@/components/payment-methods/SelectMethod.component.vue";
 
 export default {
 name: 'AppMainContent',
-components: { AppHeader,AppSideMenu,AppFooter, CampaignCard }, 
+components: { AppHeader,AppSideMenu,AppFooter, SelectMethod }, 
 data(){
     return{
     };

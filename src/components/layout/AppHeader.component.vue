@@ -2,6 +2,7 @@
     <div class="class-full">
       <pv-menubar class="menu-bar">
         <template #start>
+          <router-link to="/explore">
           <pv-button  text rounded>
             <img
               src="https://i.postimg.cc/6QvxVCSG/logo.png"
@@ -9,6 +10,7 @@
               class="h-3rem w-3rem"
             />
           </pv-button>
+        </router-link>
         </template>
   
         <template #end>

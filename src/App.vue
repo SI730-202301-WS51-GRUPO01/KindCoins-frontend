@@ -1,21 +1,16 @@
 <template>
   <div class="app-container">
-    <AppHeader v-if="$route.meta.showHeader"/>
     <div class="main-container">
-      <div class="component-container">
-        <RouterView/>
-      </div>
+      <RouterView/>
     </div>
-    <AppSideMenu v-if="$route.meta.showSideMenu"/>
-    <AppFooter/>
   </div>
+  <AppFooter/>
 </template>
 
 <script>
 import AppHeader from "@/components/layout/AppHeader.component.vue"
 import AppFooter from "@/components/layout/AppFooter.component.vue"
 import CampaignCreated from "./components/campaign-section/launch-campaign/CampaignCreated.component.vue";
-import AppSideMenu from "./components/layout/AppSideMenu.component.vue";
 import CampaignData from "./components/campaign-section/launch-campaign/CampaignData.component.vue";
 import Login from "./components/user-start/login.vue";
 import SignUp from "./components/user-start/signup.vue";
@@ -30,7 +25,7 @@ import PaymentMethod from "./components/payment-methods/PaymentMethod.component.
 
 export default {
   name: 'App',
-  components: { AppFooter, AppHeader, CampaignCreated, AppSideMenu, CampaignData, Login, SignUp,
+  components: { AppFooter, AppHeader, CampaignCreated, CampaignData, Login, SignUp,
      ThankU, Congratulations, SignUpWith, DonationDetails, MembershipTipe, Preview, AppHome, PaymentMethod}, 
   data(){
     return{
@@ -53,6 +48,7 @@ export default {
 </script>
 
 <style scoped>
+
 .app-container {
   display: flex;
   flex-direction: column;

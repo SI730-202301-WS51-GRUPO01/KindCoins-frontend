@@ -12,6 +12,7 @@ import DonationDetails from "../components/campaign-section/launch-campaign/Dona
 import MembershipTipe from "../components/campaign-section/launch-campaign/MembershipTipe.component.vue";
 import SelectMethod from "../components/payment-methods/SelectMethod.component.vue";
 import PaymentMethod from "../components/payment-methods/PaymentMethod.component.vue";
+import Explore from "../components/explore-section/Explore.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -100,6 +101,11 @@ const router = createRouter({
             path:'/home',
             name: 'Home',
             component: AppHome,
+        },
+        {
+            path:'/explore',
+            name: 'Explore',
+            component: Explore,
         }
     ]
 })

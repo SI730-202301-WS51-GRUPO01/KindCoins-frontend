@@ -6,10 +6,9 @@ import router from './router'
 // App Theme
 import 'primevue/resources/themes/md-light-indigo/theme.css';
 import 'primevue/resources/primevue.min.css';
-import 'primeicons/primeicons.css';
+import "primeicons/primeicons.css";
 // Add PrimeFlex
 import 'primeflex/primeflex.css';
-import 'primeicons/primeicons.css';
 // Add Components
 import Card from "primevue/card";
 import Checkbox from 'primevue/checkbox';
@@ -34,7 +33,6 @@ import Galleria from 'primevue/galleria';
 
 //DonationCampaign
 import InputNumber from 'primevue/inputnumber';
-import 'primeicons/primeicons.css';
 import Dropdown from 'primevue/dropdown';
 
 import './assets/main.css'

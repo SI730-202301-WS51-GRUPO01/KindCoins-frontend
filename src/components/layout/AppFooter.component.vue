@@ -98,10 +98,4 @@ hr{
   margin-top: 1vh;
   margin-bottom: 1vh;
 }
-.card {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
 </style>

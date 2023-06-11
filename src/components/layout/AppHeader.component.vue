@@ -2,15 +2,15 @@
     <div class="class-full">
         <pv-menubar class="menu-bar">
             <template #start>
-                <pv-button text rounded> 
-                    <img src="https://i.postimg.cc/6QvxVCSG/logo.png" alt="logo" class="h-3rem">
+                <pv-button text rounded class="logo-button"> 
+                    <img src="https://i.postimg.cc/6QvxVCSG/logo.png" alt="logo" style="width: 80%; height: auto;">
                 </pv-button>               
             </template>
 
             <template #end>
                 <div class="card flex flex-wrap justify-content-center gap-4 align-items-center">
                     <span class="p-input-icon-left">
-                    <i class="pi pi-search" />
+                    <i class="pi pi-search"/>
                     <pv-input-text v-model="value1" placeholder="Buscar" class="p-inputtext-sm"/>
                     </span>
                     <!-- <pv-badge value="3" severity="danger"></pv-badge> -->
@@ -26,12 +26,21 @@
 </template>
 
 <script>
-
 </script>
 
 
 <style scoped>
 .menu-bar{
     background-color: #EBFFFD;
+}
+.logo-button {
+    padding: 0;  /* Elimina el relleno interno del botón */
+}
+.p-inputtext-sm{
+    width: 35rem;
+}
+
+.logo-button img {
+  margin-right: 0;  /* Elimina el margen derecho de la imagen */
 }
 </style>

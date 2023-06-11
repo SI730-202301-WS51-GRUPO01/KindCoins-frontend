@@ -4,7 +4,7 @@
         <img class="logo" src="./../../../public/1.png" alt="kind coins logo"/>
         </div>
         <p style="grid-column: 2/3">¡Felicitaciones, su cuenta ha sido habilitada!</p>
-        <router-link to="/campaign-data" style="grid-column: 2/3" >
+        <router-link to="/explore" style="grid-column: 2/3" >
             <pv-button label="Ir a Kind Coins"/>
         </router-link>
     </div>

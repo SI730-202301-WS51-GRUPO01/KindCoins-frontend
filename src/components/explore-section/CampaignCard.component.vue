@@ -1,19 +1,54 @@
 <template>
-    <div class="card flex align-items-center justify-content-center pt-5">
-      <pv-card style="width: 18em">
-        <template #header>
-            <img alt="user header" src="https://primefaces.org/cdn/primevue/images/usercard.png" class="card-img" />
-        </template>
-        <template #title>Average Performance</template>
-        <template #content>
-        <p>Hweyyy</p>
-        </template>
-      </pv-card>
+    <div class="card-container">
+        <pv-card v-for="(card, index) in cards" :key="index" style="width: 350px;">
+            <template #header>
+                <img alt="card header" :src="card.photoURL" class="card-photo"/>
+            </template>
+            <template #title>{{ card.title }}</template>
+            <template #content>{{ card.resume }}</template>
+            <template #footer>
+                <pv-button label="Donar ahora" class="donar-btn"/>
+            </template>
+        </pv-card>
     </div>
 </template>
 
-<style scoped>
-.card-img {
-  max-width: 100%;
+<script>
+import { KindCoinsService } from '../../services/kindcoins-api.service';
+
+export default{
+    name: "campaign-card",
+    data(){
+        return{
+            cards:[],
+            kindcoinsService: null,
+        };
+    },
+    mounted(){
+        this.kindcoinsService = new KindCoinsService();
+        this.kindcoinsService.getAllCards()
+        .then((response)=>{
+            this.cards = response.data;
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
 }
-</style>
+</script>
+
+<style>
+
+.card-container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 1%;
+      margin-bottom: 1%;
+}
+.card-container .card-photo{
+    width: 350px;
+    border-radius: 1% 1% 0% 0%;
+}
+.card-container .donar-btn{
+    background-color:#0597A6;
+}

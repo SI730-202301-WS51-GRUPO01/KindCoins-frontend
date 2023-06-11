@@ -35,7 +35,6 @@ import RadioButton from 'primevue/radiobutton';
 import Calendar from 'primevue/calendar';
 //DonationCampaign
 import InputNumber from 'primevue/inputnumber';
-import 'primeicons/primeicons.css';
 import Dropdown from 'primevue/dropdown';
 import FileUpload from 'primevue/fileupload';
 import Toast from 'primevue/toast';

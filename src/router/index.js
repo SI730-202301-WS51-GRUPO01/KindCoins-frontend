@@ -13,6 +13,7 @@ import MembershipTipe from "../components/campaign-section/launch-campaign/Membe
 import SelectMethod from "../components/payment-methods/SelectMethod.component.vue";
 import PaymentMethod from "../components/payment-methods/PaymentMethod.component.vue";
 import AppMainContent from "../components/layout/AppMainContent.component.vue";
+import Explore from "../components/explore-section/Explore.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -88,7 +89,12 @@ const router = createRouter({
 
                 },
             ]
-          }
+          },
+        {
+            path:'/explore',
+            name: 'Explore',
+            component: Explore,
+        }
 
     ]
 })

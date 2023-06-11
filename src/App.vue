@@ -6,6 +6,7 @@
       </div>
     </div>  
   </div>
+  <AppFooter/>
 </template>
 
 <script>

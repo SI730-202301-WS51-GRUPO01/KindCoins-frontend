@@ -1,7 +1,7 @@
 import http from '../core/services/http-common';
 
 export class KindCoinsService{
-    gettAllUsers(){
+    getAllUsers(){
         return http.get('/users');
     }
     getUserById(id){
@@ -9,5 +9,11 @@ export class KindCoinsService{
     }
     createUser(data){
         return http.post('/users', data);
+    }
+    getAllCards(){
+        return http.get('/cards-info');
+    }
+    getImages(){
+        return http.get('/galleria');
     }
 }

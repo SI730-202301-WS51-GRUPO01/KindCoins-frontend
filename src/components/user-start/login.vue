@@ -28,8 +28,32 @@
 </template>
 
 <script>
+import { KindCoinsService } from '../../services/kindcoins-api.service';
 export default{
-    name: 'Login'
+    name: 'Login',
+    data(){
+        return{
+            user: {},
+            kindcoinsService: null,
+            submitted: false
+        };
+    },
+    created(){
+        this.kindcoinsService = new KindCoinsService();
+    },
+    methods:
+    {
+        openNew(){
+            this.user = {};
+            this.submitted=false;
+        },
+        getUserData(){
+
+        },
+        validateUserData(){
+            
+        }
+    }
 }
 </script>
 

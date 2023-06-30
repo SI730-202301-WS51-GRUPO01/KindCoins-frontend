@@ -9,29 +9,29 @@
                 <span class="p-float-label">
                     <pv-input-text 
                     type="text"
-                    id="name" 
-                    v-model.trim="user.name" 
+                    id="FirstName" 
+                    v-model.trim="user.FirstName" 
                     required="true"
                     autofocus
-                    :class="{'p-invalid': submitted && !user.name}"
+                    :class="{'p-invalid': submitted && !user.FirstName}"
                     style="width: 33.3vh" 
                     />
-                    <label for="name" style="font-family: 'Roboto'; color: #515151">Ingresa tus nombres</label>
-                    <small class="p-error" v-if="submitted && !user.name">
+                    <label for="FirstName" style="font-family: 'Roboto'; color: #515151">Ingresa tus nombres</label>
+                    <small class="p-error" v-if="submitted && !user.FirstName">
                         El nombre es requerido.
                     </small>
                 </span>
                 <span class="p-float-label">
                     <pv-input-text
                     type="text" 
-                    id="lastname" 
-                    v-model.trim="user.lastname" 
+                    id="LastName" 
+                    v-model.trim="user.LastName" 
                     required="true"
                     autofocus
-                    :class="{'p-invalid': submitted && !user.lastname}"
+                    :class="{'p-invalid': submitted && !user.LastName}"
                     style="width: 33.3vh" />
-                    <label for="lastname" style="font-family: 'Roboto'; color: #515151">Ingresa tus apellidos</label>
-                    <small class="p-error" v-if="submitted && !user.lastname">
+                    <label for="LastName" style="font-family: 'Roboto'; color: #515151">Ingresa tus apellidos</label>
+                    <small class="p-error" v-if="submitted && !user.LastName">
                         El apellido es requerido.
                     </small>
                 </span>
@@ -40,28 +40,28 @@
                     <span class="p-float-label">
                         <pv-input-text
                         type="text"
-                        id="dni"
-                        v-model.trim="user.dni"
+                        id="DNI"
+                        v-model.trim="user.DNI"
                         required="true"
                         autofocus
-                        :class="{'p-invalid': submitted && !user.dni}"
+                        :class="{'p-invalid': submitted && !user.DNI}"
                         style="width: 33.3vh" />
-                        <label for="dni" style="font-family: 'Roboto'; color: #515151">Ingresa tu DNI</label>
-                        <small class="p-error" v-if="submitted && !user.dni">
+                        <label for="DNI" style="font-family: 'Roboto'; color: #515151">Ingresa tu DNI</label>
+                        <small class="p-error" v-if="submitted && !user.DNI">
                             El DNI es requerido.
                         </small>
                     </span>
                     <span class="p-float-label">
                         <pv-input-text 
                         type="text"
-                        id="phone" 
-                        v-model.trim="user.phone" 
+                        id="Phone" 
+                        v-model.trim="user.Phone" 
                         required="true"
                         autofocus
-                        :class="{'p-invalid': submitted && !user.phone}"
+                        :class="{'p-invalid': submitted && !user.Phone}"
                         style="width: 33.3vh" />
-                        <label for="phone" style="font-family: 'Roboto'; color: #515151">Ingresa tu teléfono</label>
-                        <small class="p-error" v-if="submitted && !user.phone">
+                        <label for="Phone" style="font-family: 'Roboto'; color: #515151">Ingresa tu teléfono</label>
+                        <small class="p-error" v-if="submitted && !user.Phone">
                         El número de celular es requerido.
                         </small>
                     </span>
@@ -69,28 +69,28 @@
                 <span class="p-float-label" style="margin-top: 15px">
                     <pv-input-text 
                     type="text"
-                    id="email"
-                    v-model.trim="user.email" 
+                    id="Email"
+                    v-model.trim="user.Email" 
                     required="true"
                     autofocus
-                    :class="{'p-invalid': submitted && !user.email}"
+                    :class="{'p-invalid': submitted && !user.Email}"
                     style="width: 67.5vh" />
-                    <label for="email" style="font-family: 'Roboto'; color: #515151">Ingresa tu correo electrónico</label>
-                    <small class="p-error" v-if="submitted && !user.email">
+                    <label for="Email" style="font-family: 'Roboto'; color: #515151">Ingresa tu correo electrónico</label>
+                    <small class="p-error" v-if="submitted && !user.Email">
                         El correo es requerido.
                     </small>
                 </span>
                 <span class="p-float-label" style="margin-top: 15px">
                     <pv-input-text
                     type="text"
-                    id="password" 
-                    v-model.trim="user.password" 
+                    id="Password" 
+                    v-model.trim="user.Password" 
                     required="true"
                     autofocus
-                    :class="{'p-invalid': submitted && !user.password}"
+                    :class="{'p-invalid': submitted && !user.Password}"
                     style="width: 67.5vh" />
-                    <label for="password" style="font-family: 'Roboto'; color: #515151">Ingresa tu contraseña</label>
-                    <small class="p-error" v-if="submitted && !user.password">
+                    <label for="Password" style="font-family: 'Roboto'; color: #515151">Ingresa tu contraseña</label>
+                    <small class="p-error" v-if="submitted && !user.Password">
                         La contraseña es requerida.
                     </small>
                 </span>
@@ -109,7 +109,7 @@
             <p style="grid-column: 2/3;">Acepto los Términos y condiciones</p>
             </div>
                 <pv-button class="create-btn" @click="saveUserData" label="Crear mi cuenta" :disabled="!checked"/>
-        </div>
+            </div>
 </template>
 
 <script>
@@ -128,17 +128,19 @@ export default{
     },
     created(){
         this.kindcoinsService = new KindCoinsService();
+        console.log(this.kindcoinsService.getAllUsers());
     },
     methods:{
         getStorableUserData(data){
             return{
                 id: data.id,
-                name: data.name,
-                lastname: data.lastname,
-                dni: data.dni,
-                phone: data.phone,
-                email: data.email,
-                password: data.password
+                firstName: data.FirstName,
+                lastName: data.LastName,
+                dni: data.DNI,
+                phone: data.Phone,
+                email: data.Email,
+                password: data.Password,
+                suscriptionPlanId: data.SuscriptionPlanId
             };
         },
         openNew(){
@@ -147,17 +149,19 @@ export default{
         },
         saveUserData(){
             this.submitted=true;
-            if(this.user.name.trim()){
-                if(this.user.password !== this.confirmpassword){
+            if(this.user.FirstName.trim()){
+                if(this.user.Password !== this.confirmpassword){
                     console.log("Las contraseñas no coinciden");
                     return;
                 }
-                this.user.id=0;
+                this.user.id = 0;
+                this.user.SuscriptionPlanId = 1;
                 console.log(this.user);
                 this.user=this.getStorableUserData(this.user);
                 this.kindcoinsService.createUser(this.user);
             }
             this.user={};
+            this.$router.push('/congratulations');
         }
     }
 }

@@ -64,6 +64,8 @@
           userId: '',
         },
 
+        id: null,
+
         saveCampaign:{},
         typeOfDonations: [],
 
@@ -109,17 +111,6 @@
 
       saveCampaignData() {
        this.saveCampaign = this.getStorableCampaignData(this.campaign); 
-        //console.log(campaignData1);
-
-/*         this.prueba.name = this.saveCampaign.name;
-        this.prueba.slogan = this.saveCampaign.slogan;
-        this.prueba.headerPhoto = this.saveCampaign.headerPhoto;
-        this.prueba.aditionalPhoto = this.saveCampaign.aditionalPhoto;
-        this.prueba.description = this.saveCampaign.description;
-        this.prueba.goal = this.saveCampaign.goal;
-        this.prueba.typeOfDonationId = this.saveCampaign.typeOfDonationId;
-        this.prueba.userId = this.saveCampaign.userId;
-        console.log(this.prueba); */
 
         this.prueba.name = this.saveCampaign.name;
         this.prueba.slogan = this.saveCampaign.slogan;
@@ -133,6 +124,9 @@
 
         this.campaignService.createCampaign(this.prueba).then((response) => {
           console.log(response);
+
+          localStorage.setItem('campaignId', JSON.stringify(response.data.id));
+
         }).catch((error) => {
           console.log(error);
         });

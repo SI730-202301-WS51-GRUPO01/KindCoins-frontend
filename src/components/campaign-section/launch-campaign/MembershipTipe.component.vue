@@ -14,7 +14,6 @@
                   <li>Crea tu campaña y recibe donanciones</li>
                   <li>Duración ilimitada</li>
                   <li>Mayor visibilidad en nuestra sección de campañas</li>
-                  <li>Crea tu campaña y recibe donanciones</li>
                   <li>Proridad en soporte</li>
                 </ul>
               </div>
@@ -40,7 +39,6 @@
                 <li>Crea tu campaña y recibe donanciones</li>
                 <li>Duración ilimitada</li>
                 <li>Mayor visibilidad en nuestra sección de campañas</li>
-                <li>Crea tu campaña y recibe donanciones</li>
                 <li>Proridad en soporte</li>
               </ul>
             </div>

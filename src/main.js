@@ -39,6 +39,7 @@ import FileUpload from 'primevue/fileupload';
 import Toast from 'primevue/toast';
 import Dialog from 'primevue/dialog';
 import InputNumber from 'primevue/inputnumber';
+import InputMask from 'primevue/inputmask';
 
 import "./assets/main.css";
 
@@ -71,6 +72,7 @@ const app = createApp(App)
 .component('pv-radio-button', RadioButton)
 .component('pv-calendar', Calendar)
 .component('pv-dialog', Dialog)
+.component('pv-input-mask', InputMask)
 
 app.use(router)
 

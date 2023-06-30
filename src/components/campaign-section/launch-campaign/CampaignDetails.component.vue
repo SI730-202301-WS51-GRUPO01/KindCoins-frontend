@@ -1,67 +1,147 @@
 <template>
-  <div class="class-full flex-column flex m-5">
-    <div class="pt-5 pb-3 flex justify-content-center">
+    <div class="class-full flex-column flex m-5">
+      <div class="pt-5 pb-3 flex justify-content-center">
         <h3 class="font-bold">Paso 2 de 5</h3>
-    </div>
+      </div>
       <div class="campaign-description pt-3 pb-3">
-          <p class="pb-2">Descripción de la campaña</p>
-          <pv-textarea  class="w-full" type="text" placeholder="Ej ."/>
+        <p class="pb-2">Descripción de la campaña</p>
+        <pv-textarea class="w-full" type="text" placeholder="Ej. Dos tercios de la pobl..." v-model="campaign.description"></pv-textarea>
       </div>
       <div class="donation-types pb-3">
-          <p class="pb-2">Seleccione los tipos de donaciones que desea recibir</p>
-          <div class="card flex justify-content-center">
-              <div class="flex flex-row">
-                  <div v-for="category of categories" :key="category.key" class="flex  align-items-center m-3">
-                      <pv-radio-button v-model="selectedCategories" :inputId="category.key" name="category" :value="category.name" />
-                      <label :for="category.key">{{ category.name }}</label>
-                  </div>
-              </div>
+        <p class="pb-2">Seleccione los tipos de donaciones que desea recibir</p>
+        <div class="card flex justify-content-center">
+          <div class="flex flex-row">
+            <div v-for="typeOfDonation in typeOfDonations" :key="typeOfDonation.id" class="flex align-items-center m-3">
+              <pv-radio-button v-model="campaign.typeOfDonationId" :inputId="typeOfDonation.id" name="typeOfDonation" :value="typeOfDonation.id"></pv-radio-button>
+              <label :for="typeOfDonation.id"> {{ typeOfDonation.typeDonation }}</label>
+            </div>
           </div>
+        </div>
       </div>
       <div class="donation-types pb-3">
-          <p class="pb-2">Meta</p>
-          <pv-inputNumber  class="w-full" id="number-input" v-model="value" />
+        <p class="pb-2">Meta</p>
+        <pv-input-number class="w-full" id="number-input" v-model="campaign.goal"></pv-input-number>
       </div>
       <div class="donation-duration flex flex-row pb-3">
-          <div  class="w-full">
-              <p class="pb-2">Fecha de inicio de campaña</p>
-              <pv-calendar v-model="date" dateFormat="dd/mm/yy" />
-          </div>
-          <div  class="w-full">
-              <p class="pb-2">Fecha de fin de campaña</p>
-              <pv-calendar v-model="date" dateFormat="dd/mm/yy" />
-          </div>
+        <div class="w-full">
+          <p class="pb-2">Fecha de inicio de campaña</p>
+          <pv-calendar v-model="startDate" dateFormat="dd/mm/yy"></pv-calendar>
+        </div>
+        <div class="w-full">
+          <p class="pb-2">Fecha de fin de campaña</p>
+          <pv-calendar v-model="endDate" dateFormat="dd/mm/yy"></pv-calendar>
+        </div>
       </div>
       <div class="pb-3">
-          <div class="flex justify-content-end">
-              <router-link to="/main-content/donation-details">
-                  <pv-button>Siguiente</pv-button>
-              </router-link>
-          </div>
+        <div class="flex justify-content-end">
+          <router-link to="/main-content/donation-details">
+            <pv-button  @click="saveCampaignData">Siguiente</pv-button>
+          </router-link>
+        </div>
       </div>
-  </div>
-</template>
-
-<script >
-export default {
-name: 'Campaign-details',
-  data(){
-      return{
-      categories,
-      selectedCategories: null,
-      };
-  }
+    </div>
+  </template>
   
-}
-const categories = [
-  { key: '1', name: 'Monetaria' },
-  { key: '2', name: 'Material' },
-  { key: '3', name: 'Voluntariado' },
-  { key: '4', name: 'Servicios' },
-];
+  <script>
+  import { TypeOfDonationService } from '@/services/TypeOfDonation.service.js';
+  import { CampaignService } from '../../../services/Campaign.service';
 
-</script>
+  export default {
+    name: 'CampaignDetails',
+    props: {
+    campaignDataProp: {  // Renombramos la propiedad
+      type: Object,
+      required: true,
+    },
+  },
 
-<style>
+    data() {
+      return {
+        campaign: {
+          description: '',
+          goal: '',
+          typeOfDonationId: '',
+          userId: '',
+        },
 
-</style>
+        saveCampaign:{},
+        typeOfDonations: [],
+
+        typeOfDonationService : null,
+        campaignService: null,
+
+        prueba: {},
+
+        startDate: null,
+        endDate: null,
+      };
+    },
+    created() {
+        this.typeOfDonationService = new TypeOfDonationService();
+        this.campaignService = new CampaignService();
+
+        this.typeOfDonationService.getAllTypeOfDonations().then((response) => {
+            this.typeOfDonations = response.data;
+        }).catch((error) => {
+            console.log(error);
+        });
+
+        //Recibe los datos de CampaignData
+        const campaignData = this.$route.query.campaignData;
+        if (campaignData) {
+          this.campaignData = JSON.parse(campaignData);
+        }
+    },
+    methods: {
+
+      getStorableCampaignData(data){
+        return{
+          name: this.campaignData.name,
+          slogan: this.campaignData.slogan,
+          headerPhoto: this.campaignData.headerPhoto,
+          aditionalPhoto: this.campaignData.aditionalPhoto,
+          description: data.description,
+          goal: data.goal,
+          typeOfDonationId: data.typeOfDonationId,
+          userId: 1,
+        };
+      },
+
+      saveCampaignData() {
+       this.saveCampaign = this.getStorableCampaignData(this.campaign); 
+        //console.log(campaignData1);
+
+/*         this.prueba.name = this.saveCampaign.name;
+        this.prueba.slogan = this.saveCampaign.slogan;
+        this.prueba.headerPhoto = this.saveCampaign.headerPhoto;
+        this.prueba.aditionalPhoto = this.saveCampaign.aditionalPhoto;
+        this.prueba.description = this.saveCampaign.description;
+        this.prueba.goal = this.saveCampaign.goal;
+        this.prueba.typeOfDonationId = this.saveCampaign.typeOfDonationId;
+        this.prueba.userId = this.saveCampaign.userId;
+        console.log(this.prueba); */
+
+        this.prueba.name = this.saveCampaign.name;
+        this.prueba.slogan = this.saveCampaign.slogan;
+        this.prueba.headerPhoto = this.saveCampaign.headerPhoto;
+        this.prueba.aditionalPhoto = this.saveCampaign.aditionalPhoto;
+        this.prueba.description = this.saveCampaign.description;
+        this.prueba.goal = this.saveCampaign.goal;
+        this.prueba.typeOfDonationId = this.saveCampaign.typeOfDonationId;
+        this.prueba.userId = this.saveCampaign.userId;
+        console.log(this.prueba);
+
+        this.campaignService.createCampaign(this.prueba).then((response) => {
+          console.log(response);
+        }).catch((error) => {
+          console.log(error);
+        });
+      },
+
+    },
+  };
+  </script>
+  
+  <style>
+  </style>
+  

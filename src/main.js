@@ -34,11 +34,11 @@ import Galleria from 'primevue/galleria';
 import RadioButton from 'primevue/radiobutton';
 import Calendar from 'primevue/calendar';
 //DonationCampaign
-import InputNumber from 'primevue/inputnumber';
 import Dropdown from 'primevue/dropdown';
 import FileUpload from 'primevue/fileupload';
 import Toast from 'primevue/toast';
 import Dialog from 'primevue/dialog';
+import InputNumber from 'primevue/inputnumber';
 
 import "./assets/main.css";
 
@@ -54,6 +54,7 @@ const app = createApp(App)
 .component('pv-toolbar', Toolbar)
 .component('pv-tiered-menu', TieredMenu)
 .component('pv-input-text', InputText)
+.component('pv-input-number', InputNumber)
 .component('pv-badge', Badge)
 .component('pv-panel-menu', PanelMenu)
 .component('pv-breadcrumb', Breadcrumb)
@@ -61,7 +62,6 @@ const app = createApp(App)
 .component('pv-accordion', Accordion)
 .component('pv-accordiontab', AccordionTab)
 .component('pv-checkbox', Checkbox)
-.component('pv-inputNumber', InputNumber)
 .component('pv-dropdown', Dropdown)
 .component('pv-progressbar', ProgressBar)
 .component('pv-textarea', Textarea)
